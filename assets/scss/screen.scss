@@ -173,6 +173,26 @@ td, th{ padding: 0; }
    2. General - Setting up some base styles
    ========================================================================== */
 
+@font-face {
+   font-family: Mittelschrift;
+   src: url('../fonts/din1451alt.ttf');
+   font-weight: normal;
+}
+
+@font-face {
+   font-family: Mittelschrift;
+   src: url('../fonts/din1451alt_G.ttf');
+   font-weight: bold;
+}
+
+.header-font {
+  font-family: "Mittelschrift", sans-serif;
+}
+
+.body-font {
+  font-family: "Merriweather", serif;
+}
+
 html {
     height: 100%;
     max-height: 100%;
@@ -183,7 +203,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Merriweather", serif;
+    @extend .body-font;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.75em;
@@ -210,7 +230,7 @@ h4, h5, h6 {
     color: #2E2E2E;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "mittelschrift", sans-serif;
     text-rendering: geometricPrecision;
 }
 
@@ -218,7 +238,6 @@ h1 {
     font-size: 5rem;
     letter-spacing: -2px;
     text-indent: -3px;
-    color: magenta;
 }
 
 h2 {
@@ -447,7 +466,7 @@ textarea, select, input {
     padding: 6px 9px;
     margin: 0 0 5px 0;
     outline: 0;
-    font-family: 'Open Sans', sans-serif;
+    @extend .header-font;
     font-size: 1.6rem;
     font-weight: 100;
     line-height: 1.4em;
@@ -501,7 +520,7 @@ button {
     outline: none;
     text-decoration: none;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    @extend .header-font;
     font-size: 11px; // Hack because Firefox sucks ass.
     line-height: 13px; // Hack because Firefox sucks ass.
     font-weight: 300;
@@ -598,7 +617,7 @@ body.nav-opened .site-wrapper {
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    @extend .header-font;
 }
 
 /* Navigation */
@@ -773,7 +792,7 @@ body.nav-opened .nav {
     color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+    @extend .header-font;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
@@ -942,10 +961,11 @@ body.nav-opened .nav {
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
     margin: 10px 0 10px 0;
-    font-size: 5rem;
-    letter-spacing: -1px;
+    font-size: 10rem;
+    letter-spacing: 0.6rem;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    @extend .header-font;
     color: #fff;
 }
 
@@ -954,7 +974,7 @@ body.nav-opened .nav {
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    @extend .body-font;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -1047,7 +1067,7 @@ body:not(.post-template) .post-title {
 .post-meta {
     display: block;
     margin: 1.75rem 0 0 0;
-    font-family: "Open Sans", sans-serif;
+    @extend .header-font;
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
@@ -1396,7 +1416,7 @@ body:not(.post-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "Merriweather", serif;
+    @extend .body-font;
     letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
@@ -1482,7 +1502,7 @@ body:not(.post-template) .post-title {
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
-    font-family: "Open Sans", sans-serif;
+    @extend .header-font;
     color: rgba(255,255,255,0.8);
     border: rgba(255,255,255,0.5) 1px solid;
     border-radius: 4px;
@@ -1574,7 +1594,7 @@ body:not(.post-template) .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
+    @extend .header-font;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -1703,7 +1723,7 @@ body:not(.post-template) .post-title {
 }
 
 .gh-subscribe-rss {
-    font-family: 'Open Sans', sans-serif;
+    @extend .header-font;
     font-size: 1.2rem;
     line-height: 1.4em;
 }
@@ -1716,7 +1736,7 @@ body:not(.post-template) .post-title {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    @extend .header-font;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
