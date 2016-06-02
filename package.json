@@ -5,6 +5,12 @@
     "isotope-layout": "^3.0.0"
   },
   "scripts": {
-    "postinstall" : "cp node_modules/isotope-layout/dist/isotope.pkgd.min.js assets/js/isotope.pkgd.min.js"
+    "postinstall": "cp node_modules/isotope-layout/dist/isotope.pkgd.min.js assets/js/isotope.pkgd.min.js; npm run build-css",
+    "build-css": "./node_modules/node-sass/bin/node-sass assets/scss/screen.scss assets/css/screen.css",
+    "watch-css": "./node_modules/nodemon/bin/nodemon.js -e scss -x npm run build-css"
+  },
+  "devDependencies": {
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2"
   }
 }
