@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "isotope-layout": "^3.0.0"
+  },
+  "scripts": {
+    "postinstall" : "cp node_modules/isotope-layout/dist/isotope.pkgd.min.js assets/js/isotope.pkgd.min.js"
   }
 }
