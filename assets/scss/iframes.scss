@@ -1,0 +1,69 @@
+@import 'defs';
+body {
+    font-size: 16px;
+    line-height: 1.88889;
+    @extend .body-font;
+    background: $background-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+table {
+    border-collapse: collapse;
+    text-align: left;
+    padding: 1px 5px;
+    border: none;
+}
+.wide_table {
+    width: 100%;
+}
+th {
+    border: none;
+    border-bottom: 1px solid $text-color;
+}
+tr {
+    &.odd {
+        background: $highlight-color;
+    }
+    &.highlight {
+        background: #fffc00;
+    }
+}
+td {
+    border: none;
+    line-height: 1.5em;
+}
+td.score,
+th.score {
+    width: 25px;
+    text-align: center;
+}
+td.name,
+th.name {
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+td.ellipsis {
+    text-align: center;
+}
+ul {
+    list-style: none;
+}
+td.flag,
+th.flag {
+    width: 26px;
+    margin: none;
+    padding: none;
+}
+.flag_in,
+.flag_out {
+    width: 25px;
+    height: 16px;
+    padding: 4px 0 0;
+}
+.flag_out {
+    opacity: 0.3;
+}

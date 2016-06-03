@@ -55,44 +55,43 @@
 
     <script type="text/javascript">
     // this is only useful for index.hbs
+    if ($('body').hasClass('home-template')) {
 
-    // initial isotope setup
-    $('#content').isotope({
-      itemSelector: '.post',
-      percentPosition: true,
-      masonry: {
-        // use outer width of grid-sizer for columnWidth
-        columnWidth: '.post'
-      }
-    });
+      // initial isotope setup
+      $('#content').isotope({
+        itemSelector: '.post',
+        percentPosition: true,
+        masonry: {
+          // use outer width of grid-sizer for columnWidth
+          columnWidth: '.post'
+        }
+      });
 
-    var resizeIframe = function() {
-      // resize iframe to fit its rendered contents
-      $("#iframe-php-table-sm")
-        .height($("#iframe-php-table-sm")
-          .contents().find(".wide_table").height() + 2 + 'px');
+      var resizeIframe = function() {
+        // resize iframe to fit its rendered contents
+        $("#iframe-php-table-sm")
+          .height($("#iframe-php-table-sm")
+            .contents().find(".wide_table").height() + 2 + 'px');
 
-      // trigger isotope redraw
-      $('#content').isotope();
-    };
+        // trigger isotope redraw
+        $('#content').isotope();
+      };
 
-    $("#iframe-php-table-sm").load(function() {
-      console.log("load");
-      resizeIframe();
-    });
+      $("#iframe-php-table-sm").load(function() {
+        resizeIframe();
+      });
 
-    $(document).ready(function() {
-      console.log('ready');
-      resizeIframe();
-    });
+      $(document).ready(function() {
+        resizeIframe();
+      });
 
-    $('body').keyup(function(e){
-
-   if(e.keyCode == 73){
-     console.log('i key');
-       resizeIframe();
-   }
-});
+      $.when($.get("assets/css/iframes.css"))
+      .done(function(response) {
+        $('iframe').contents().find("head")
+        .append($("<style type='text/css'>" + response + "</style>"))
+        .append('<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />');
+      });
+    }
     </script>
 </body>
 </html>
