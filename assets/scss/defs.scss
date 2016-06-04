@@ -1,11 +1,12 @@
 $red: #f00;
 $white: #fff;
 $black: #000;
-$gold: #F2E65A;
+$gold: #FCE900;
+$silver: #4A4A4A;
 
 $background-color: $white;
 $text-color: $black;
-$highlight-color: $gold;
+$highlight-color: $silver;
 
 @font-face {
    font-family: Mittelschrift;
@@ -20,10 +21,11 @@ $highlight-color: $gold;
 }
 
 .header-font {
-  font-family: "Mittelschrift", sans-serif;
+  // font-family: "Mittelschrift", sans-serif;
+  font-family: 'Biryani', sans-serif;
 }
 
 .body-font {
-  font-family: "Merriweather", serif;
-  color: $red;
+  // font-family: "Merriweather", serif;
+  font-family: 'Biryani', sans-serif;
 }
