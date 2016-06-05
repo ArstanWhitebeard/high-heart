@@ -941,24 +941,31 @@ body.nav-opened .nav {
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
     margin: 3rem 0 0 1rem;
-    font-size: 10rem;
+    font-size: 9rem;
     line-height: 0.8em;
     letter-spacing: -0.7rem;
+    word-spacing: 999rem;
     font-weight: 900;
     text-transform: uppercase;
     @extend .header-font;
-    color: $white
+    color: $gold;
 }
 
 .page-description {
-    margin: -1rem 0 0 1rem;
-    font-size: 8rem;
-    line-height: 8rem;
+    margin: 0rem 0 0 1rem;
+    font-size: 7rem;
+    line-height: 5rem;
     font-weight: 900;
     @extend .header-font;
     text-transform: uppercase;
     letter-spacing: -0.6rem;
-    color: $gold;
+    color: $silver;
+
+    &:after {
+      display: block;
+      color: $bronze;
+      content: "2016";
+    }
 }
 
 .no-cover.main-header {

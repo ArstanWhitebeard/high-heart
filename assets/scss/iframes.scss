@@ -23,8 +23,9 @@ th {
     border-bottom: 1px solid $text-color;
 }
 tr {
+  background: $white;
     &.odd {
-        background: $highlight-color;
+        background: $silver;
     }
     &.highlight {
         background: #fffc00;
