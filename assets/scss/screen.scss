@@ -940,7 +940,7 @@ body.nav-opened .nav {
 
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
-    margin: 2rem 0 0 1rem;
+    margin: 0 0 0 1rem;
     font-size: 9rem;
     line-height: 6.5rem;
     letter-spacing: -0.65rem;
@@ -1764,10 +1764,6 @@ body:not(.post-template) .post-title {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        height: auto;
-        min-height: 240px;
-        height: 60vh;
-        padding: 15% 0;
     }
 
     .scroll-down,
@@ -1780,16 +1776,6 @@ body:not(.post-template) .post-title {
 
     .blog-logo img {
         padding: 4px 0;
-    }
-
-    .page-title {
-        font-size: 4rem;
-        letter-spacing: -1px;
-    }
-
-    .page-description {
-        font-size: 1.8rem;
-        line-height: 1.5em;
     }
 
     .post {
@@ -1904,15 +1890,32 @@ body:not(.post-template) .post-title {
    12. Media Queries - Smaller than 500px
    ========================================================================== */
 
+@media only screen and (max-width: 737px) and (orientation: landscape),
+            screen and (max-width: 500px) {
+  .page-title {
+      font-size: 5.5rem;
+      line-height: 4rem;
+      letter-spacing: -0.1em;
+  }
+
+  .page-description {
+      font-size: 4.5rem;
+      margin-left: 1rem;
+      line-height: 3.25rem;
+      letter-spacing: -0.1em;
+
+      &:after {
+        font-size: 3.5rem;
+        margin-left: 0rem;
+        line-height: 2.75rem;
+      }
+  }
+}
+
 @media only screen and (max-width: 500px) {
 
     .main-header {
         margin-bottom: 15px;
-        height: 40vh;
-    }
-
-    .no-cover.main-header {
-        height: 30vh;
     }
 
     .archive-template .main-header {
@@ -2025,16 +2028,8 @@ body:not(.post-template) .post-title {
         margin: 0 0 2.5rem 0;
     }
 
-    .page-title {
-        font-size: 3rem;
-    }
-
     .post-excerpt p {
         font-size: 0.85em;
-    }
-
-    .page-description {
-        font-size: 1.6rem;
     }
 
     h1, h2, h3,
