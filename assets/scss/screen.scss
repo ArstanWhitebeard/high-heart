@@ -577,12 +577,12 @@ body.nav-opened .site-wrapper {
 .main-header {
     position: relative;
     width: 100%;
-    height: 100vh;
     margin-bottom: 5rem;
     text-align: left;
     background: #222 no-repeat center center;
     background-size: cover;
     overflow: hidden;
+    padding: 1rem 0;
 }
 
 .main-header .inner {
@@ -940,31 +940,34 @@ body.nav-opened .nav {
 
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
-    margin: 3rem 0 0 1rem;
+    margin: 2rem 0 0 1rem;
     font-size: 9rem;
-    line-height: 0.8em;
-    letter-spacing: -0.7rem;
+    line-height: 6.5rem;
+    letter-spacing: -0.65rem;
     word-spacing: 999rem;
-    font-weight: 900;
+    font-weight: 700;
     text-transform: uppercase;
     @extend .header-font;
     color: $gold;
 }
 
 .page-description {
-    margin: 0rem 0 0 1rem;
+    margin: 0rem 0 0 22rem;
     font-size: 7rem;
-    line-height: 5rem;
-    font-weight: 900;
+    line-height: 5.25rem;
+    font-weight: 700;
     @extend .header-font;
     text-transform: uppercase;
-    letter-spacing: -0.6rem;
+    letter-spacing: -0.65rem;
     color: $silver;
 
     &:after {
       display: block;
       color: $bronze;
       content: "2016";
+      margin-left: -3rem;
+      font-size: 6rem;
+      line-height: 4.1rem;
     }
 }
 
