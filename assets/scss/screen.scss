@@ -223,8 +223,8 @@ h1 {
 }
 
 h2 {
-    font-size: 3.6rem;
-    letter-spacing: -1px;
+    font-size: 3rem;
+    letter-spacing: -0.25rem;
 }
 
 h3 {
@@ -994,12 +994,13 @@ body.nav-opened .nav {
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width: 33%;
+    width: calc(33.333% - 10px);
     max-width: 710px;
-    margin: 4rem auto;
+    margin:5px;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
+    text-align: justify;
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -1020,7 +1021,6 @@ body.nav-opened .nav {
 }
 
 .post.php-table-sm {
-  background: yellow;
   padding-bottom: 0;
 }
 
@@ -1030,12 +1030,25 @@ body.nav-opened .nav {
   width: 100%;
 }
 
-body:not(.post-template) .post-title {
-    font-size: 3.6rem;
-}
-
 .post-title a {
     text-decoration: none;
+    text-transform: uppercase;
+}
+
+article:nth-child(2) header .post-title {
+  &::first-letter {color: $gold !important;}
+}
+
+article:nth-child(3) header .post-title {
+  &::first-letter {color: $silver !important;}
+}
+
+article:nth-child(4) header .post-title {
+  &::first-letter {color: $bronze !important;}
+}
+
+.post-title {
+  &::first-letter {font-size: 5rem; letter-spacing: -0.1em;}
 }
 
 .post-excerpt p {
@@ -1800,7 +1813,7 @@ body:not(.post-template) .post-title {
     }
 
     h2 {
-        font-size: 3.6rem;
+        font-size: 3rem;
     }
 
     h3 {
