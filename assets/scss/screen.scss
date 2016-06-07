@@ -991,12 +991,16 @@ body.nav-opened .nav {
     animation-delay: 0.1s;
 }
 
+.content {
+  margin: 0 15px;
+}
+
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width: calc(33.333% - 10px);
+    width: calc(33.333% - 20px);
     max-width: 710px;
-    margin:5px;
+    margin:10px;
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
@@ -1767,6 +1771,12 @@ article:nth-child(4) header .post-title {
    12. Media Queries - Smaller than 900px
    ========================================================================== */
 
+@media only screen and (min-width: 1200px) {
+  .post {
+    width: calc(25% - 20px);
+  }
+}
+
 @media only screen and (max-width: 900px) {
 
     blockquote {
@@ -1789,6 +1799,10 @@ article:nth-child(4) header .post-title {
 
     .blog-logo img {
         padding: 4px 0;
+    }
+
+    .content {
+      margin: 0;
     }
 
     .post {
