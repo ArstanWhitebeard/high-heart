@@ -998,12 +998,21 @@ body.nav-opened .nav {
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width: calc(33.333% - 20px);
-    max-width: 710px;
-    margin:10px;
+    max-width: 500px;
+
     padding-bottom: 4rem;
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
+
+    .home-template & {
+      width: calc(33.333% - 20px);
+      margin:10px;
+    }
+
+    .post-template & {
+      width: calc(100% - 20px);
+      margin: 0 auto;
+    }
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -1060,6 +1069,22 @@ article:nth-child(4) header .post-title {
     font-size: 0.9em;
     line-height: 1.7em;
     text-align: justify;
+}
+
+.post-content p {
+  text-align: justify;
+}
+
+.post-content p:nth-child(1) {
+  &::first-letter {color: $gold !important; font-size: 3rem; font-weight: 700;}
+}
+
+.post-content p:nth-child(2) {
+  &::first-letter {color: $silver !important; font-size: 3rem; font-weight: 700;}
+}
+
+.post-content p:nth-child(3) {
+  &::first-letter {color: $bronze !important; font-size: 3rem; font-weight: 700;}
 }
 
 .read-more {
