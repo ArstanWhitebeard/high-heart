@@ -582,15 +582,15 @@ body.nav-opened .site-wrapper {
     background: #222 no-repeat center center;
     background-size: cover;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.home-template .main-header {
+.home-template .main-header, .archive-template .main-header {
   padding: 1rem;
 }
 
 .post-template .main-header {
   padding: 2rem 0.5rem 0;
-  cursor: pointer;
 }
 
 .main-header .inner {
@@ -955,7 +955,7 @@ body.nav-opened .nav {
     color: $gold;
 }
 
-.home-template .page-title {
+.home-template .page-title, .archive-template .page-title {
   font-size: 9rem;
   line-height: 6.5rem;
   word-spacing: 999rem;
@@ -981,7 +981,7 @@ body.nav-opened .nav {
     }
 }
 
-.home-template .page-description {
+.home-template .page-description, .archive-template .page-description {
   margin: 0rem 0 0 21rem;
   font-size: 7rem;
   line-height: 5.25rem;
@@ -1037,7 +1037,7 @@ body.nav-opened .nav {
     border-bottom: #EBF2F6 1px solid;
     word-wrap: break-word;
 
-    .home-template & {
+    .home-template &, .archive-template & {
       width: calc(33.333% - 20px);
       margin:10px;
     }
@@ -1650,7 +1650,7 @@ article:nth-child(4) header .post-title {
     position: relative;
     width: 80%;
     max-width: 710px;
-    margin: 0 auto;
+    margin: 2rem auto;
     @extend .header-font;
     font-size: 1.3rem;
     color: #9EABB3;
@@ -1715,17 +1715,6 @@ article:nth-child(4) header .post-title {
 .extra-pagination .pagination {
     width: auto;
 }
-
-/* On page2+ make all the headers smaller */
-.archive-template .main-header {
-    max-height: 30vh;
-}
-
-/* On page2+ show extra pagination controls at the top of post list */
-.archive-template .extra-pagination {
-    display: block;
-}
-
 
 /* ==========================================================================
    10. Subscribe - Generate those email subscribers
@@ -1980,6 +1969,7 @@ article:nth-child(4) header .post-title {
   }
 
   .home-template .page-title,
+  .archive-template .page-title,
   .post-template .page-title {
       display: block;
       font-size: 5.5rem;
@@ -1989,6 +1979,7 @@ article:nth-child(4) header .post-title {
   }
 
   .home-template .page-description,
+  .archive-template .page-description,
   .post-template .page-description  {
       display: block;
       font-size: 4.5rem;

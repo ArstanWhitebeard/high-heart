@@ -55,7 +55,7 @@
 
     <script type="text/javascript">
     // this is only useful for index.hbs
-    if ($('body').hasClass('home-template')) {
+    if ($('body').hasClass('home-template') || $('body').hasClass('archive-template')) {
 
       // initial isotope setup
       $('#content').isotope({
@@ -94,11 +94,11 @@
       });
     }
 
-    if ($('body').hasClass('post-template')) {
-      $('header').on('click', function() {
-          window.location.href = '/';
-      });
-    }
+
+    $('header').on('click', function() {
+        window.location.href = '/';
+    });
+
     </script>
 </body>
 </html>
