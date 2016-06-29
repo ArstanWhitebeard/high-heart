@@ -52,8 +52,12 @@
 
     <script type="text/javascript" src="{{asset "js/isotope.pkgd.min.js"}}"></script>
 
+    <script type="text/javascript" src="{{asset "js/impromptu.js"}}"></script>
+
 
     <script type="text/javascript">
+    var impromptu = new Impromptu();
+
     // this is only useful for index.hbs
     if ($('body').hasClass('home-template') || $('body').hasClass('archive-template')) {
 
@@ -83,6 +87,7 @@
 
       $(document).ready(function() {
         resizeIframe();
+        impromptu.teamSummary(function() {$('#content').isotope();});
       });
 
       $.when($.get("assets/css/iframes.css"))
