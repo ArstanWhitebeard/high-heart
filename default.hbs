@@ -73,7 +73,13 @@
       });
 
       $(document).ready(function() {
-        impromptu.teamSummary(function() {$('#content').isotope();});
+        impromptu.tableSummary(function() {$('#content').isotope();});
+      });
+    }
+
+    if ($('body').hasClass('page-template-table')) {
+      $(document).ready(function() {
+        impromptu.table();
       });
     }
 

@@ -446,7 +446,21 @@ th.name {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
+td.flag,
+th.flag {
+    width: 26px;
+    margin: none;
+    padding: none;
+}
+.flag_in,
+.flag_out {
+    width: 25px;
+    height: 16px;
+    padding: 4px 0 0;
+}
+.flag_out {
+    opacity: 0.3;
+}
 iframe, .fluid-width-video-wrapper {
     display: block;
     margin: 1.75em 0;
