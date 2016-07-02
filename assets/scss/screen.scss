@@ -392,7 +392,7 @@ kbd {
 table {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.75em 0;
+    margin: 0;
     width: 100%;
     max-width: 100%;
     background-color: transparent;
@@ -1080,18 +1080,17 @@ body.nav-opened .nav {
     box-shadow: #FFF 0 0 0 5px;
 }
 
-.post.php-table-sm {
-  padding-bottom: 0;
-}
-
-#iframe-php-table-sm {
-  margin: 0;
-  border: 0;
-  width: 100%;
-}
-
 .post.imp-tab-sum {
   display: table;
+  &::before {
+    content:"Click to expand";
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 100;
+    color: $silver;
+  }
 }
 
 .post-title a {

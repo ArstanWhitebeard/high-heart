@@ -71,34 +71,10 @@
         }
       });
 
-      var resizeIframe = function() {
-        // resize iframe to fit its rendered contents
-        $("#iframe-php-table-sm")
-          .height($("#iframe-php-table-sm")
-            .contents().find(".wide_table").height() + 2 + 'px');
-
-        // trigger isotope redraw
-        $('#content').isotope();
-      };
-
-      $("#iframe-php-table-sm").load(function() {
-        resizeIframe();
-      });
-
       $(document).ready(function() {
-        resizeIframe();
         impromptu.teamSummary(function() {$('#content').isotope();});
       });
-
-      $.when($.get("assets/css/iframes.css"))
-      .done(function(response) {
-        $('iframe').contents().find("head")
-        .append($("<style type='text/css'>" + response + "</style>"))
-        .append('<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />');
-        resizeIframe();
-      });
     }
-
 
     $('header').on('click', function() {
         window.location.href = '/';

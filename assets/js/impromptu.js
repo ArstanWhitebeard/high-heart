@@ -8,9 +8,9 @@ var Impromptu = (function Impromptu() {
 
       target.html();
       var table = $('<table>').appendTo(target);
-      table.append('<thead><tr><th class="score"></th><th>Player</th>' +
-      // '<th class="score">G</th><th class="score">S</th><th class="score">B</th>' + 
-      '<th class="score">Pts</th></tr></thead>');
+      // table.append('<thead><tr><th class="score"></th><th>Player</th>' +
+      // '<th class="score">G</th><th class="score">S</th><th class="score">B</th>' +
+      // '<th class="score">Pts</th></tr></thead>');
 
       var tbody = $('<tbody>').appendTo(table);
 
