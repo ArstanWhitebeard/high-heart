@@ -448,18 +448,7 @@ th.name {
 }
 td.flag,
 th.flag {
-    width: 26px;
-    margin: none;
-    padding: none;
-}
-.flag_in,
-.flag_out {
-    width: 25px;
-    height: 16px;
-    padding: 4px 0 0;
-}
-.flag_out {
-    opacity: 0.3;
+    width: 31px;
 }
 iframe, .fluid-width-video-wrapper {
     display: block;
@@ -1032,6 +1021,21 @@ body.nav-opened .nav {
     margin-left: 0.5rem;
   }
 }
+
+.page-template-table {
+  .post {max-width: 900px;}
+  .post-content table img.flag_in,
+  .post-content table img.flag_out {
+    padding: 0;
+    width: 31px;
+    height: 20px;
+  }
+}
+
+.flag_out {
+    opacity: 0.3;
+}
+
 
 .no-cover.main-header {
     // min-height: 160px;
