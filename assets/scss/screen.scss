@@ -400,14 +400,16 @@ table {
 
 table th,
 table td {
-    padding: 8px;
+    padding: 8px 4px;
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: #EFEFEF 1px solid;
+    border-top: $silver 1px solid;
 }
 
-table th { color: #000; }
+table th {
+  font-weight: 600;
+}
 
 table caption + thead tr:first-child th,
 table caption + thead tr:first-child td,
@@ -430,6 +432,19 @@ table tbody > tr:nth-child(odd) > th {
 table.plain tbody > tr:nth-child(odd) > td,
 table.plain tbody > tr:nth-child(odd) > th {
    background: transparent;
+}
+
+td.score,
+th.score {
+    width: 25px;
+    text-align: center;
+}
+td.name,
+th.name {
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 iframe, .fluid-width-video-wrapper {
@@ -1073,6 +1088,10 @@ body.nav-opened .nav {
   margin: 0;
   border: 0;
   width: 100%;
+}
+
+.post.imp-tab-sum {
+  display: table;
 }
 
 .post-title a {

@@ -8,7 +8,9 @@ var Impromptu = (function Impromptu() {
 
       target.html();
       var table = $('<table>').appendTo(target);
-      table.append('<thead><tr><th class="score"></th><th>Team</th><th>Player</th><th class="score">G</th><th class="score">S</th><th class="score">B</th><th class="score">Pts</th></tr></thead>')
+      table.append('<thead><tr><th class="score"></th><th>Player</th>' +
+      // '<th class="score">G</th><th class="score">S</th><th class="score">B</th>' + 
+      '<th class="score">Pts</th></tr></thead>');
 
       var tbody = $('<tbody>').appendTo(table);
 
@@ -19,13 +21,12 @@ var Impromptu = (function Impromptu() {
         for (var i=0; i<standings.length; ++i) {
           var standing = standings[i];
           var tr = $('<tr>').appendTo(tbody);
-          tr.append('<td>' + standing.position + '</td>');
-          tr.append('<td>' + standing.username + '</td>');
-          tr.append('<td>' + standing.team + '</td>');
-          tr.append('<td>' + standing.golds + '</td>');
-          tr.append('<td>' + standing.silvers + '</td>');
-          tr.append('<td>' + standing.bronzes + '</td>');
-          tr.append('<td>' + standing.points + '</td>');
+          tr.append('<td class="score">' + standing.position + '</td>');
+          tr.append('<td class="name">' + standing.username + '</td>');
+          // tr.append('<td class="score">' + standing.golds + '</td>');
+          // tr.append('<td class="score">' + standing.silvers + '</td>');
+          // tr.append('<td class="score">' + standing.bronzes + '</td>');
+          tr.append('<td class="score">' + standing.points + '</td>');
         }
 
         if (callback)
