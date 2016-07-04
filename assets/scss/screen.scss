@@ -1099,6 +1099,7 @@ body.nav-opened .nav {
 }
 
 .post.imp-tab-sum {
+  cursor: pointer;
 
   &::before {
     content:"Click to expand";
@@ -2161,7 +2162,7 @@ article:nth-child(4) header .post-title {
     h4, h5, h6 {
         margin: 0 0 0.3em 0;
     }
-    // 
+    //
     // h1 {
     //     font-size: 2.8rem;
     //     letter-spacing: -1px;
