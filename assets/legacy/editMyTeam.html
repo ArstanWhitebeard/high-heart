@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Fantasy Impromptu - My Team</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="lib/jquery-1.11.0.min.js"></script>
+    <script language='JavaScript'  type="text/javascript">
+        $(document).ready(function(){ validateCheckBoxes(null); })
+
+        function validateCheckBoxes(box)
+        {
+
+            var countriesInPool = new Array();
+            countriesInPool[0] = 0;
+            countriesInPool[1] = 0;
+            countriesInPool[2] = 0;
+            countriesInPool[3] = 0;
+
+            for(i=0; i<document.countriesCheckBoxes.length; ++i)
+            {
+                var pool = Math.floor(i/8);
+
+                if (document.countriesCheckBoxes[i].checked)
+                    countriesInPool[pool]++;
+            }
+
+            if (box != null) {
+                if (countriesInPool[0] > 2 || countriesInPool[1] > 2 || countriesInPool[2] > 2 || countriesInPool[3] > 2)
+                    box.checked=false;
+                else
+                    jQuery(box.parentNode.parentNode).toggleClass("active");
+            }
+
+            for (j=0; j<4; ++j) {
+                if (countriesInPool[j] >= 2)
+                    $('.country_column:nth-of-type(' + (j+1) + ')').addClass('inactive');
+                else
+                    $('.country_column:nth-of-type(' + (j+1) + ')').removeClass('inactive');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,800,100' rel='stylesheet' type='text/css'>
+    <!--[if IE]><link href="iehacks.css" rel="stylesheet" type="text/css"><![endif]-->
+
+<div class="header">
+<h1>Fantasy Impromptu</h1>
+</div>
+
+<div class="navigation">
+<ul>
+<li><a href="blog.php">Blog</a></li><li><a href="table.php">Table</a></li><li><a href='login.php'>Log in</a></li></ul>
+</div>
+<div class="sidebar">
+</div>
+<div class="main"><h2>Step 2 of 2</h2><form id="countriesCheckBoxes" name="countriesCheckBoxes" action="editMyTeam.php" method="post">
+<div class='help_box'>Choose 2 countries from each column - you'll score points as they play matches in the World Cup.</div>
+<span class='error'>Must choose exactly 2 countries from Column A<br/>Must choose exactly 2 countries from Column B<br/>Must choose exactly 2 countries from Column C<br/>Must choose exactly 2 countries from Column D<br/></span><div class='country_columns'>
+<div class='country_column'>
+<div class='country_column_header'>&darr; Choose 2 &darr;</div>
+<label for="checkSpain"><div class="country_box"><div class="country_name">Spain</div><img class="flag_small" src="img/Spain.png"/><div class="description">Rank: 1, Group B<input type="checkbox" name="countries[]" id="checkSpain" value="Spain" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkGermany"><div class="country_box"><div class="country_name">Germany</div><img class="flag_small" src="img/Germany.png"/><div class="description">Rank: 2, Group G<input type="checkbox" name="countries[]" id="checkGermany" value="Germany" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkPortugal"><div class="country_box"><div class="country_name">Portugal</div><img class="flag_small" src="img/Portugal.png"/><div class="description">Rank: 3, Group G<input type="checkbox" name="countries[]" id="checkPortugal" value="Portugal" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkColombia"><div class="country_box"><div class="country_name">Colombia</div><img class="flag_small" src="img/Colombia.png"/><div class="description">Rank: 4, Group C<input type="checkbox" name="countries[]" id="checkColombia" value="Colombia" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkUruguay"><div class="country_box"><div class="country_name">Uruguay</div><img class="flag_small" src="img/Uruguay.png"/><div class="description">Rank: 5, Group D<input type="checkbox" name="countries[]" id="checkUruguay" value="Uruguay" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkArgentina"><div class="country_box"><div class="country_name">Argentina</div><img class="flag_small" src="img/Argentina.png"/><div class="description">Rank: 6, Group F<input type="checkbox" name="countries[]" id="checkArgentina" value="Argentina" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkBrazil"><div class="country_box"><div class="country_name">Brazil</div><img class="flag_small" src="img/Brazil.png"/><div class="description">Rank: 7, Group A<input type="checkbox" name="countries[]" id="checkBrazil" value="Brazil" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkSwitzerland"><div class="country_box"><div class="country_name">Switzerland</div><img class="flag_small" src="img/Switzerland.png"/><div class="description">Rank: 8, Group E<input type="checkbox" name="countries[]" id="checkSwitzerland" value="Switzerland" onclick='return validateCheckBoxes(this)'/></div></div></label></div>
+<div class='country_column'>
+<div class='country_column_header'>&darr; Choose 2 &darr;</div>
+<label for="checkItaly"><div class="country_box"><div class="country_name">Italy</div><img class="flag_small" src="img/Italy.png"/><div class="description">Rank: 9, Group D<input type="checkbox" name="countries[]" id="checkItaly" value="Italy" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkGreece"><div class="country_box"><div class="country_name">Greece</div><img class="flag_small" src="img/Greece.png"/><div class="description">Rank: 10, Group C<input type="checkbox" name="countries[]" id="checkGreece" value="Greece" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkEngland"><div class="country_box"><div class="country_name">England</div><img class="flag_small" src="img/England.png"/><div class="description">Rank: 11, Group D<input type="checkbox" name="countries[]" id="checkEngland" value="England" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkBelgium"><div class="country_box"><div class="country_name">Belgium</div><img class="flag_small" src="img/Belgium.png"/><div class="description">Rank: 12, Group H<input type="checkbox" name="countries[]" id="checkBelgium" value="Belgium" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkUSA"><div class="country_box"><div class="country_name">USA</div><img class="flag_small" src="img/USA.png"/><div class="description">Rank: 13, Group G<input type="checkbox" name="countries[]" id="checkUSA" value="USA" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkChile"><div class="country_box"><div class="country_name">Chile</div><img class="flag_small" src="img/Chile.png"/><div class="description">Rank: 14, Group B<input type="checkbox" name="countries[]" id="checkChile" value="Chile" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkNetherlands"><div class="country_box"><div class="country_name">Netherlands</div><img class="flag_small" src="img/Netherlands.png"/><div class="description">Rank: 15, Group B<input type="checkbox" name="countries[]" id="checkNetherlands" value="Netherlands" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkFrance"><div class="country_box"><div class="country_name">France</div><img class="flag_small" src="img/France.png"/><div class="description">Rank: 16, Group E<input type="checkbox" name="countries[]" id="checkFrance" value="France" onclick='return validateCheckBoxes(this)'/></div></div></label></div>
+<div class='country_column'>
+<div class='country_column_header'>&darr; Choose 2 &darr;</div>
+<label for="checkRussia"><div class="country_box"><div class="country_name">Russia</div><img class="flag_small" src="img/Russia.png"/><div class="description">Rank: 18, Group H<input type="checkbox" name="countries[]" id="checkRussia" value="Russia" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkMexico"><div class="country_box"><div class="country_name">Mexico</div><img class="flag_small" src="img/Mexico.png"/><div class="description">Rank: 19, Group A<input type="checkbox" name="countries[]" id="checkMexico" value="Mexico" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkCroatia"><div class="country_box"><div class="country_name">Croatia</div><img class="flag_small" src="img/Croatia.png"/><div class="description">Rank: 20, Group A<input type="checkbox" name="countries[]" id="checkCroatia" value="Croatia" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkIvory Coast"><div class="country_box"><div class="country_name">Ivory Coast</div><img class="flag_small" src="img/Ivory_Coast.png"/><div class="description">Rank: 21, Group C<input type="checkbox" name="countries[]" id="checkIvory Coast" value="Ivory Coast" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkAlgeria"><div class="country_box"><div class="country_name">Algeria</div><img class="flag_small" src="img/Algeria.png"/><div class="description">Rank: 25, Group H<input type="checkbox" name="countries[]" id="checkAlgeria" value="Algeria" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkBosnia & Herzegovina"><div class="country_box"><div class="country_name longName">Bosnia & Herzegovina</div><img class="flag_small" src="img/Bosnia.png"/><div class="description">Rank: 25, Group F<input type="checkbox" name="countries[]" id="checkBosnia & Herzegovina" value="Bosnia & Herzegovina" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkEcuador"><div class="country_box"><div class="country_name">Ecuador</div><img class="flag_small" src="img/Ecuador.png"/><div class="description">Rank: 28, Group E<input type="checkbox" name="countries[]" id="checkEcuador" value="Ecuador" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkHonduras"><div class="country_box"><div class="country_name">Honduras</div><img class="flag_small" src="img/Honduras.png"/><div class="description">Rank: 32, Group E<input type="checkbox" name="countries[]" id="checkHonduras" value="Honduras" onclick='return validateCheckBoxes(this)'/></div></div></label></div>
+<div class='country_column'>
+<div class='country_column_header'>&darr; Choose 2 &darr;</div>
+<label for="checkCosta Rica"><div class="country_box"><div class="country_name">Costa Rica</div><img class="flag_small" src="img/Costa_Rica.png"/><div class="description">Rank: 34, Group D<input type="checkbox" name="countries[]" id="checkCosta Rica" value="Costa Rica" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkIran"><div class="country_box"><div class="country_name">Iran</div><img class="flag_small" src="img/Iran.png"/><div class="description">Rank: 37, Group F<input type="checkbox" name="countries[]" id="checkIran" value="Iran" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkGhana"><div class="country_box"><div class="country_name">Ghana</div><img class="flag_small" src="img/Ghana.png"/><div class="description">Rank: 38, Group G<input type="checkbox" name="countries[]" id="checkGhana" value="Ghana" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkNigeria"><div class="country_box"><div class="country_name">Nigeria</div><img class="flag_small" src="img/Nigeria.png"/><div class="description">Rank: 45, Group F<input type="checkbox" name="countries[]" id="checkNigeria" value="Nigeria" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkJapan"><div class="country_box"><div class="country_name">Japan</div><img class="flag_small" src="img/Japan.png"/><div class="description">Rank: 47, Group C<input type="checkbox" name="countries[]" id="checkJapan" value="Japan" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkCameroon"><div class="country_box"><div class="country_name">Cameroon</div><img class="flag_small" src="img/Cameroon.png"/><div class="description">Rank: 50, Group A<input type="checkbox" name="countries[]" id="checkCameroon" value="Cameroon" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkSouth Korea"><div class="country_box"><div class="country_name">South Korea</div><img class="flag_small" src="img/South_Korea.png"/><div class="description">Rank: 56, Group H<input type="checkbox" name="countries[]" id="checkSouth Korea" value="South Korea" onclick='return validateCheckBoxes(this)'/></div></div></label><label for="checkAustralia"><div class="country_box"><div class="country_name">Australia</div><img class="flag_small" src="img/Australia.png"/><div class="description">Rank: 59, Group B<input type="checkbox" name="countries[]" id="checkAustralia" value="Australia" onclick='return validateCheckBoxes(this)'/></div></div></label></div>
+</div>
+<div class='help_box'>Make up a team name (up to 32 characters) - silliness and puns encouraged.</div><div><label for="team_name">Your team name</label> <input type="text" size="32" maxlength="32" id="team_name" name="team_name" value=""/></div><div class='error'>Team Name must be >0 characters long</div><input type="submit" name="submitMyTeam" value="Submit"/>
+</form>
+
+
+
+
+</div>
+
+</body>
+</html>

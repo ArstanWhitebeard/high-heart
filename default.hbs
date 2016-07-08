@@ -83,6 +83,12 @@
       });
     }
 
+    if ($('body').hasClass('page-template-team')) {
+      $(document).ready(function() {
+        impromptu.team();
+      });
+    }
+
     $('header').on('click', function() { window.location.href = '/'; });
     $('.imp-tab-sum').on('click', function() { window.location.href = '/table'; });
 
