@@ -455,6 +455,72 @@ iframe, .fluid-width-video-wrapper {
     margin: 1.75em 0;
 }
 
+.country_box {
+    float: left;
+    margin: 0.5em 0 0 0;
+    padding: 5% 5%;
+    background: #E5FFE5;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.country_column_header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.country_column {
+    float: left;
+    border: none;
+    width: 24%;
+    padding: 0 1.333% 0 0;
+    margin: 0;
+    border: 0;
+}
+
+.country_box.active
+{
+    background-color: #66ff00 !important;
+    opacity: 1.0 !important;
+}
+
+.country_column.inactive .country_box {opacity: 0.4;}
+
+.country_column:nth-of-type(4) {padding-right: 0;}
+
+.country_column:nth-of-type(1) .country_box {background-color: #0BBCFF;}
+.country_column:nth-of-type(2) .country_box {background-color: #ce08ff;}
+.country_column:nth-of-type(3) .country_box {background-color: #ffc300;}
+.country_column:nth-of-type(4) .country_box {background-color: #ff0095;}
+
+
+
+.country_columns {
+    margin: 0 0 1em;
+    overflow: hidden;
+}
+.flag_small
+{
+    width: 25px;
+    height: 16px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    clear: none;
+    padding: none;
+    margin: none;
+    border: none;
+    vertical-align: bottom;
+}
+
 /* When a video is inside the fitvids wrapper, drop the
 margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {

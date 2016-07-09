@@ -27,8 +27,11 @@
             <h1 class="post-title">{{title}}</h1>
         </header>
 
-        <section class="post-content imp-team">
+        <section class="post-content">
+          <form class="imp-team" id="countriesCheckBoxes" name="countriesCheckBoxes" onsubmit="return impromptu.createTeam()" method="post">
             {{content}}
+            <button type="button" onclick="console.log(impromptu); return impromptu.createTeam()">Submit</button>
+          </form>
         </section>
 
     </article>

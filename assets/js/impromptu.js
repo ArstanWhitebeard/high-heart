@@ -92,16 +92,61 @@ var Impromptu = (function Impromptu() {
 
           for (var j=0; j<countries.length; ++j) {
             var country = countries[j];
-            $('<label for="check' + country.name + 'Spain">' +
+            var internalName = country.name.replace(/ /g,"_");
+
+            $('<label for="check' + internalName + '">' +
             '<div class="country_box">' +
             '<div class="country_name">' + country.name + '</div>' +
             '<img class="flag_small" src="../assets/' + country.flagPath + '"/>' +
             '<div class="description">Handicap: ' + country.handicap +
-            '<input type="checkbox" name="countries[]" id="check' + country.name + '" value="' + country.name + '" onclick="return validateCheckBoxes(this)""/>' +
+            '<input type="checkbox" name="countries[]" id="check' + internalName + '" value="' + country.name + '" onclick="return impromptu.validateCheckBoxes(this)""/>' +
             '</div></div></label>').appendTo(column);
           }
         }
       });
-    }
-  };
+    };
+
+    _this.validateCheckBoxes = function(box) {
+        var countriesInPool = new Array();
+        countriesInPool[0] = 0;
+        countriesInPool[1] = 0;
+        countriesInPool[2] = 0;
+        countriesInPool[3] = 0;
+
+        for(i=0; i<document.countriesCheckBoxes.length; ++i) {
+            var pool = Math.floor(i/8);
+
+            if (document.countriesCheckBoxes[i].checked)
+                countriesInPool[pool]++;
+        }
+
+        if (box != null) {
+            if (countriesInPool[0] > 2 || countriesInPool[1] > 2 || countriesInPool[2] > 2 || countriesInPool[3] > 2)
+                box.checked=false;
+            else
+                $(box.parentNode.parentNode).toggleClass("active");
+        }
+
+        for (j=0; j<4; ++j) {
+            if (countriesInPool[j] >= 2)
+                $('.country_column:nth-of-type(' + (j+1) + ')').addClass('inactive');
+            else
+                $('.country_column:nth-of-type(' + (j+1) + ')').removeClass('inactive');
+        }
+    };
+
+    _this.createTeam = function() {
+      var countries = [];
+
+      var checkBoxes = document.countriesCheckBoxes;
+
+      for(i=0; i<checkBoxes.length; ++i) {
+        if (checkBoxes[i].checked) {
+          countries.push(checkBoxes[i].id.substr(5).replace(/_/g," "));
+          console.log(countries);
+        }
+      }
+    };
+  }
+
 }());
