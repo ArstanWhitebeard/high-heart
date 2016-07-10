@@ -28,9 +28,15 @@
         </header>
 
         <section class="post-content">
-          <form class="imp-team" id="countriesCheckBoxes" name="countriesCheckBoxes" onsubmit="return impromptu.createTeam()" method="post">
-            {{content}}
-            <button type="button" onclick="console.log(impromptu); return impromptu.createTeam()">Submit</button>
+          {{content}}
+
+          <form id="countriesCheckBoxes" name="countriesCheckBoxes">
+            <div class="imp-team"></div>
+            <label for="teamName">Your team name</label>
+            <input type="text" size="32" maxlength="32" id="teamName" name="teamName" value=""/>
+            <label for="userName">Your name (public)</label>
+            <input type="text" size="32" maxlength="32" id="userName" name="userName" value=""/>
+            <button type="button" onclick="return impromptu.createTeam()">Submit</button>
           </form>
         </section>
 

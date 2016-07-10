@@ -84,8 +84,6 @@ var Impromptu = (function Impromptu() {
 
       // TODO add config file
       $.getJSON('http://localhost:3000/countries', function(json) {
-        console.log(json);
-
         for (var i=0; i<json.pools.length; ++i) {
           var column = $('<div class="country_column"</div>').appendTo(target);
           var countries = json.pools[i].countries;
@@ -99,7 +97,7 @@ var Impromptu = (function Impromptu() {
             '<div class="country_name">' + country.name + '</div>' +
             '<img class="flag_small" src="../assets/' + country.flagPath + '"/>' +
             '<div class="description">Handicap: ' + country.handicap +
-            '<input type="checkbox" name="countries[]" id="check' + internalName + '" value="' + country.name + '" onclick="return impromptu.validateCheckBoxes(this)""/>' +
+            '<input type="checkbox" class="countryCheckBox" id="check' + internalName + '" value="' + country.name + '" onclick="return impromptu.validateCheckBoxes(this)""/>' +
             '</div></div></label>').appendTo(column);
           }
         }
@@ -138,14 +136,24 @@ var Impromptu = (function Impromptu() {
     _this.createTeam = function() {
       var countries = [];
 
-      var checkBoxes = document.countriesCheckBoxes;
+      var checkBoxes = $('.countryCheckBox');
 
       for(i=0; i<checkBoxes.length; ++i) {
         if (checkBoxes[i].checked) {
           countries.push(checkBoxes[i].id.substr(5).replace(/_/g," "));
-          console.log(countries);
         }
       }
+
+      var teamName = $('#teamName').val();
+      var userName = $('#userName').val();
+
+      var obj = {
+        "username": userName,
+        "team": teamName,
+        "countries": countries
+      }
+
+      console.log(obj);
     };
   }
 
