@@ -153,7 +153,18 @@ var Impromptu = (function Impromptu() {
         "countries": countries
       }
 
-      console.log(obj);
+      $.ajax({
+        method: 'POST',
+        url: 'http://localhost:3000/user',
+        data: JSON.stringify(obj),
+        dataType: 'json',
+        contentType: 'application/json; charset=UTF-8',
+        crossDomain: true
+      }).done(function(data) {
+        window.location.href = '/table';
+      }).fail(function(data) {
+        $('.error').html(JSON.parse(data.responseText).message);
+      });
     };
   }
 
