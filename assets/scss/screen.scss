@@ -465,6 +465,15 @@ iframe, .fluid-width-video-wrapper {
     position: relative;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
+
+    .country_name {
+      font-size:3rem;
+      letter-spacing: -0.2rem;
+    }
+
+    .description {
+      font-size: 1.5rem;
+    }
 }
 
 .country_column_header {
@@ -486,9 +495,8 @@ iframe, .fluid-width-video-wrapper {
     border: 0;
 }
 
-.country_box.active
-{
-    background-color: #66ff00 !important;
+.country_box.active {
+    background-color: $gold !important;
     opacity: 1.0 !important;
 }
 
@@ -496,10 +504,10 @@ iframe, .fluid-width-video-wrapper {
 
 .country_column:nth-of-type(4) {padding-right: 0;}
 
-.country_column:nth-of-type(1) .country_box {background-color: #0BBCFF;}
-.country_column:nth-of-type(2) .country_box {background-color: #ce08ff;}
-.country_column:nth-of-type(3) .country_box {background-color: #ffc300;}
-.country_column:nth-of-type(4) .country_box {background-color: #ff0095;}
+.country_column:nth-of-type(1) .country_box {background-color: #2082A3;}
+.country_column:nth-of-type(2) .country_box {background-color: #C6239E;}
+.country_column:nth-of-type(3) .country_box {background-color: #5FAD56;}
+.country_column:nth-of-type(4) .country_box {background-color: #FF3239;}
 
 
 
@@ -527,7 +535,7 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
-textarea, select, input {
+textarea, select, input[type="text"] {
     width: 260px;
     padding: 6px 9px;
     margin: 0 0 5px 0;
@@ -541,6 +549,12 @@ textarea, select, input {
     border-radius: 4px;
     box-shadow: none;
     -webkit-appearance: none;
+}
+
+input[type=checkbox] {
+    float: right;
+    margin: 4px 2px 0 0;
+    padding: none;
 }
 
 textarea {
@@ -1102,6 +1116,9 @@ body.nav-opened .nav {
     opacity: 0.3;
 }
 
+.page-template-team {
+  .post {max-width: 900px;}
+}
 
 .no-cover.main-header {
     // min-height: 160px;
@@ -1347,7 +1364,7 @@ article:nth-child(4) header .post-title {
 
 /* Keep images centered, and allow images wider than the main
    text column to break out. */
-.post-content img {
+.post-content img:not(.flag_small) {
     display: block;
     max-width: 126%;
     height: auto;
