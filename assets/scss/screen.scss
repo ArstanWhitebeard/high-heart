@@ -455,6 +455,10 @@ iframe, .fluid-width-video-wrapper {
     margin: 1.75em 0;
 }
 
+#countriesCheckBoxes {
+  margin-top: 3rem;
+}
+
 .country_box {
     float: left;
     margin: 0.5em 0 0 0;
@@ -473,6 +477,7 @@ iframe, .fluid-width-video-wrapper {
 
     .description {
       font-size: 1.5rem;
+      line-height: 2.5rem;
     }
 }
 
@@ -481,9 +486,9 @@ iframe, .fluid-width-video-wrapper {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    font-size: 1.5rem;
+    letter-spacing: -0.1rem;
 }
 
 .country_column {
@@ -504,9 +509,9 @@ iframe, .fluid-width-video-wrapper {
 
 .country_column:nth-of-type(4) {padding-right: 0;}
 
-.country_column:nth-of-type(1) .country_box {background-color: #2082A3;}
+.country_column:nth-of-type(1) .country_box {background-color: #5FAD56;}
 .country_column:nth-of-type(2) .country_box {background-color: #C6239E;}
-.country_column:nth-of-type(3) .country_box {background-color: #5FAD56;}
+.country_column:nth-of-type(3) .country_box {background-color: #2082A3;}
 .country_column:nth-of-type(4) .country_box {background-color: #FF3239;}
 
 
@@ -517,8 +522,8 @@ iframe, .fluid-width-video-wrapper {
 }
 .flag_small
 {
-    width: 25px;
-    height: 16px;
+    width: 36px;
+    height: 18px;
     position: absolute;
     top: 0px;
     right: 0px;

@@ -86,6 +86,7 @@ var Impromptu = (function Impromptu() {
       $.getJSON('http://localhost:3000/countries', function(json) {
         for (var i=0; i<json.pools.length; ++i) {
           var column = $('<div class="country_column"</div>').appendTo(target);
+          column.append('<div class="country_column_header">↓ Choose 2 ↓</div>');
           var countries = json.pools[i].countries;
 
           for (var j=0; j<countries.length; ++j) {
