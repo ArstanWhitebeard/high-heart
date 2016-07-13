@@ -145,8 +145,28 @@ var Impromptu = (function Impromptu() {
         }
       }
 
+      var errors = [];
+
+      // TODO make configurable
+      if (countries.length != 8) {
+        errors.push("Must choose exactly 8 countries");
+      }
+
       var teamName = $('#teamName').val();
       var userName = $('#userName').val();
+
+      if (userName == null || userName.length == 0) {
+        errors.push("Must specify your name");
+      }
+
+      if (teamName == null || teamName.length == 0) {
+        errors.push("Must specify a team name");
+      }
+
+      if (errors.length != 0) {
+        $('.error').html(errors.join('; '));
+        return;
+      }
 
       var obj = {
         "username": userName,

@@ -16,28 +16,10 @@ $text-color: $veryDarkGrey;
 $highlight-color: $darkGrey;
 $header-color: $darkGrey;
 
-@font-face {
-   font-family: Mittelschrift;
-   src: url('../fonts/din1451alt.ttf');
-   font-weight: normal;
-}
-
-@font-face {
-   font-family: Mittelschrift;
-   src: url('../fonts/din1451alt_G.ttf');
-   font-weight: bold;
-}
-
 .header-font {
-  // font-family: "Mittelschrift", sans-serif;
-  // font-family: 'Biryani', sans-serif;
-  // font-family: 'Titillium Web', sans-serif;
   font-family: 'Rubik', sans-serif;
 }
 
 .body-font {
-  // font-family: "Merriweather", serif;
-  // font-family: 'Biryani', sans-serif;
-  // font-family: 'Titillium Web', sans-serif;
   font-family: 'Rubik', sans-serif;
 }
