@@ -30,14 +30,12 @@
         <section class="post-content">
           {{content}}
 
-          <div class="help_box">Choose 2 countries from each column - you'll score 4 points for each gold medal they win, 2 for each silver, 1 for each bronze, plus their fixed points <emph>handicap</emph>.</div>
+          <div class="help_box">Choose 2 countries from each column - you'll score 4 points for each gold medal they win, 2 for each silver, 1 for each bronze, plus their <emph>handicaps</emph>.</div>
 
           <form id="countriesCheckBoxes" name="countriesCheckBoxes">
             <div class="imp-team"></div>
-            <label for="teamName">Your team name</label>
-            <input type="text" size="32" maxlength="32" id="teamName" name="teamName" value=""/>
-            <label for="userName">Your name (public)</label>
-            <input type="text" size="32" maxlength="32" id="userName" name="userName" value=""/>
+            <label class="nameLabel">Your team name<input type="text" size="32" maxlength="32" id="teamName" name="teamName" value=""/></label>
+            <label class="nameLabel">Your name (public)<input type="text" size="32" maxlength="32" id="userName" name="userName" value=""/></label>
             <button type="button" onclick="return impromptu.createTeam()">Submit</button>
             <div class="error"</div>
           </form>
