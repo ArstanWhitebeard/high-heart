@@ -97,9 +97,9 @@ var Impromptu = (function Impromptu() {
             '<div class="country_box">' +
             '<div class="country_name">' + country.name + '</div>' +
             '<img class="flag_small" src="../assets/' + country.flagPath + '"/>' +
-            '<div class="description">Handicap: +' + country.handicap +
+            '<span class="description">Handicap: +' + country.handicap + '</span>' +
             '<input type="checkbox" class="countryCheckBox" id="check' + internalName + '" value="' + country.name + '" onclick="return impromptu.validateCheckBoxes(this)""/>' +
-            '</div></div></label>').appendTo(column);
+            '</div></label>').appendTo(column);
           }
         }
       });
@@ -123,7 +123,7 @@ var Impromptu = (function Impromptu() {
             if (countriesInPool[0] > 2 || countriesInPool[1] > 2 || countriesInPool[2] > 2 || countriesInPool[3] > 2)
                 box.checked=false;
             else
-                $(box.parentNode.parentNode).toggleClass("active");
+                $(box.parentNode).toggleClass("active");
         }
 
         for (j=0; j<4; ++j) {

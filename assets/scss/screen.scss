@@ -501,12 +501,12 @@ iframe, .fluid-width-video-wrapper {
 
     .country_name {
       font-size:3rem;
+      line-height: 4rem;
       letter-spacing: -0.2rem;
       width: 100%;
-      padding: none;
-      margin: none;
+      padding: 0;
+      margin: 0 0 -0.5rem 0;
       font-weight: normal;
-      float: left;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -594,9 +594,11 @@ textarea, select, input[type="text"] {
 }
 
 input[type=checkbox] {
-    float: right;
-    margin: 4px 2px 0 0;
-    padding: none;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    margin: 0;
+    padding: 0;
 }
 
 textarea {
