@@ -14,8 +14,7 @@ var Impromptu = (function Impromptu() {
 
       var tbody = $('<tbody>').appendTo(table);
 
-      // TODO add config file
-      $.getJSON('http://localhost:3000/teamstandings/summary', function(json) {
+      $.getJSON(impromptuConfig.urls.api + '/teamstandings/summary', function(json) {
         var standings = json.standings;
 
         for (var i=0; i<standings.length; ++i) {
@@ -48,7 +47,7 @@ var Impromptu = (function Impromptu() {
       var tbody = $('<tbody>').appendTo(table);
 
       // TODO add config file
-      $.getJSON('http://localhost:3000/teamstandings/full', function(json) {
+      $.getJSON(impromptuConfig.urls.api + '/teamstandings/full', function(json) {
         var standings = json.standings;
 
         for (var i=0; i<standings.length; ++i) {
@@ -83,7 +82,7 @@ var Impromptu = (function Impromptu() {
       target.html();
 
       // TODO add config file
-      $.getJSON('http://localhost:3000/countries', function(json) {
+      $.getJSON(impromptuConfig.urls.api + '/countries', function(json) {
         for (var i=0; i<json.pools.length; ++i) {
           var column = $('<div class="country_column"</div>').appendTo(target);
           column.append('<div class="country_column_header">↓ Choose 2 ↓</div>');
@@ -112,6 +111,8 @@ var Impromptu = (function Impromptu() {
         countriesInPool[2] = 0;
         countriesInPool[3] = 0;
 
+        var rulesCountriesPerPool = impromptuConfig.rules.countriesPerPool;
+
         for(i=0; i<document.countriesCheckBoxes.length; ++i) {
             var pool = Math.floor(i/8);
 
@@ -120,14 +121,14 @@ var Impromptu = (function Impromptu() {
         }
 
         if (box != null) {
-            if (countriesInPool[0] > 2 || countriesInPool[1] > 2 || countriesInPool[2] > 2 || countriesInPool[3] > 2)
+            if (countriesInPool[0] > rulesCountriesPerPool[0] || countriesInPool[1] > rulesCountriesPerPool[1] || countriesInPool[2] > rulesCountriesPerPool[2] || countriesInPool[3] > rulesCountriesPerPool[3])
                 box.checked=false;
             else
                 $(box.parentNode).toggleClass("active");
         }
 
         for (j=0; j<4; ++j) {
-            if (countriesInPool[j] >= 2)
+            if (countriesInPool[j] >= rulesCountriesPerPool[j])
                 $('.country_column:nth-of-type(' + (j+1) + ')').addClass('inactive');
             else
                 $('.country_column:nth-of-type(' + (j+1) + ')').removeClass('inactive');
@@ -147,8 +148,7 @@ var Impromptu = (function Impromptu() {
 
       var errors = [];
 
-      // TODO make configurable
-      if (countries.length != 8) {
+      if (countries.length != impromptuConfig.rules.countriesPerTeam) {
         errors.push("Must choose exactly 8 countries");
       }
 
@@ -176,7 +176,7 @@ var Impromptu = (function Impromptu() {
 
       $.ajax({
         method: 'POST',
-        url: 'http://localhost:3000/user',
+        url: impromptuConfig.urls.api + '/user',
         data: JSON.stringify(obj),
         dataType: 'json',
         contentType: 'application/json; charset=UTF-8',
