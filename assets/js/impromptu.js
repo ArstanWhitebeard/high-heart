@@ -187,6 +187,22 @@ var Impromptu = (function Impromptu() {
         $('.error').html(JSON.parse(data.responseText).message);
       });
     };
+
+    _this.createTeamLink = function(callback) {
+      var target = $('.imp-team-link');
+
+      if (Date.now()/1000 < impromptuConfig.rules.lastTeamCreation) {
+        target.removeClass('hidden');
+        target.on('click', function() {
+          window.location.href = '/team';
+        });
+      } else {
+        target.remove();
+      }
+
+      if (callback)
+        return callback();
+    };
   }
 
 }());

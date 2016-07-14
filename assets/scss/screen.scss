@@ -1239,6 +1239,19 @@ body.nav-opened .nav {
   }
 }
 
+.imp-team-link {
+  background: $veryLightGrey;
+  border: 1px solid $lightGrey;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  .post-excerpt p {
+    font-size: 10rem;
+    text-align: center;
+    color: $silver;
+  }
+}
+
 .post-title a {
     text-decoration: none;
     color: $header-color;
@@ -1258,7 +1271,7 @@ article:nth-child(4) header .post-title {
 }
 
 .post-title {
-  &::first-letter {font-size: 5rem; letter-spacing: -0.1em;}
+  &::first-letter {font-size: 5rem; letter-spacing: -0.05em;}
 }
 
 .post-excerpt p {
