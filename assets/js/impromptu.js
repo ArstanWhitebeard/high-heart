@@ -16,10 +16,15 @@ var Impromptu = (function Impromptu() {
 
       $.getJSON(impromptuConfig.urls.api + '/teamstandings/summary', function(json) {
         var standings = json.standings;
+        var favourites = _this.getFavourites();
 
         for (var i=0; i<standings.length; ++i) {
           var standing = standings[i];
           var tr = $('<tr>').appendTo(tbody);
+
+          if (favourites.indexOf(standing.team) != -1)
+            tr.addClass("favourite");
+
           tr.append('<td class="score">' + standing.position + '</td>');
           tr.append('<td class="name">' + standing.username + '</td>');
           // tr.append('<td class="score">' + standing.golds + '</td>');
@@ -46,13 +51,18 @@ var Impromptu = (function Impromptu() {
 
       var tbody = $('<tbody>').appendTo(table);
 
-      // TODO add config file
+      var favourites = _this.getFavourites();
+
       $.getJSON(impromptuConfig.urls.api + '/teamstandings/full', function(json) {
         var standings = json.standings;
 
         for (var i=0; i<standings.length; ++i) {
           var standing = standings[i];
           var tr = $('<tr>').appendTo(tbody);
+
+          if (favourites.indexOf(standing.team) != -1)
+            tr.addClass("favourite");
+
           tr.append('<td class="score">' + standing.position + '</td>');
           tr.append('<td class="name">' + standing.username + '</td>');
           tr.append('<td class="name">' + standing.team + '</td>');
@@ -81,7 +91,6 @@ var Impromptu = (function Impromptu() {
       var target = $('.imp-team');
       target.html();
 
-      // TODO add config file
       $.getJSON(impromptuConfig.urls.api + '/countries', function(json) {
         for (var i=0; i<json.pools.length; ++i) {
           var column = $('<div class="country_column"</div>').appendTo(target);
@@ -182,6 +191,7 @@ var Impromptu = (function Impromptu() {
         contentType: 'application/json; charset=UTF-8',
         crossDomain: true
       }).done(function(data) {
+        _this.addFavourite(teamName);
         window.location.href = '/table';
       }).fail(function(data) {
         $('.error').html(JSON.parse(data.responseText).message);
@@ -202,6 +212,33 @@ var Impromptu = (function Impromptu() {
 
       if (callback)
         return callback();
+    };
+
+    _this.addFavourite = function(teamName) {
+      var favourites = _this.getFavourites();
+      favourites.push(teamName);
+
+      _this.setFavourites(favourites);
+    };
+
+    _this.removeFavourite = function(teamName) {
+      var favourites = _this.getFavourites();
+
+      var index = favourites.indexOf(teamName);
+
+      if (index != -1)
+        _this.setFavourites(favourites.splice(index, 1));
+    };
+
+    _this.getFavourites = function() {
+      if (localStorage.favourites == null)
+        return [];
+
+      return JSON.parse(localStorage.favourites);
+    };
+
+    _this.setFavourites = function(favourites) {
+      localStorage.favourites = JSON.stringify(favourites);
     };
   }
 
