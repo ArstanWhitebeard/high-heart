@@ -25,7 +25,16 @@ var Impromptu = (function Impromptu() {
           if (favourites.indexOf(standing.team) != -1)
             tr.addClass("favourite");
 
-          tr.append('<td class="score pos">' + standing.position + '</td>');
+          $('<td class="pos">' + standing.position + '</td>')
+          .appendTo(tr)
+          .on('click', function(teamname, tr) {
+            return function(e) {
+              _this.toggleFavourite(teamname);
+              tr.toggleClass('favourite');
+              e.stopPropagation();
+            };
+          }(standing.team, tr));
+
           tr.append('<td class="name">' + standing.username + '</td>');
           // tr.append('<td class="score">' + standing.golds + '</td>');
           // tr.append('<td class="score">' + standing.silvers + '</td>');
@@ -63,15 +72,17 @@ var Impromptu = (function Impromptu() {
           if (favourites.indexOf(standing.team) != -1)
             tr.addClass("favourite");
 
-          tr.append('<td class="score">' + standing.position + '</td>');
-          $('<td class="username name">' + standing.username + '</td>')
+            $('<td class="pos">' + standing.position + '</td>')
             .appendTo(tr)
             .on('click', function(teamname, tr) {
-              return function() {
+              return function(e) {
                 _this.toggleFavourite(teamname);
                 tr.toggleClass('favourite');
+                e.stopPropagation();
               };
             }(standing.team, tr));
+
+          tr.append('<td class="username name">' + standing.username + '</td>');
           tr.append('<td class="name">' + standing.team + '</td>');
           tr.append('<td class="score">' + standing.golds + '</td>');
           tr.append('<td class="score">' + standing.silvers + '</td>');

@@ -434,6 +434,13 @@ table.plain tbody > tr:nth-child(odd) > th {
    background: transparent;
 }
 
+
+td.pos,
+th.pos {
+    width: 35px;
+    text-align: left;
+    position: relative;
+}
 td.score,
 th.score {
     width: 25px;
@@ -1256,12 +1263,13 @@ body.nav-opened .nav {
   background: $gold;
 }
 
-.username::before {
+.pos::after {
   display: inline-block;
-  margin: -0.5rem 0.5rem -0.5rem -0.5rem;
+  position: absolute;
+  right: 0;
   content: " ";
-  width: 24px;
-  height: 24px;
+  width: 2rem;
+  height: 2rem;
   background-color: $lightGrey;
   -webkit-mask-image: url('../img/medal-solid.svg');
 
@@ -1270,8 +1278,12 @@ body.nav-opened .nav {
   }
 }
 
-.username:hover::before {background-color: $gold;}
-.favourite .username:hover::before {background-color: $lightGrey;}
+.pos:hover::after {background-color: $gold;}
+.favourite .pos:hover::after {background-color: $lightGrey;}
+
+.username {
+  cursor: pointer;
+}
 
 .post-title a {
     text-decoration: none;
