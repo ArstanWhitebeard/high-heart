@@ -25,7 +25,7 @@ var Impromptu = (function Impromptu() {
           if (favourites.indexOf(standing.team) != -1)
             tr.addClass("favourite");
 
-          tr.append('<td class="score">' + standing.position + '</td>');
+          tr.append('<td class="score pos">' + standing.position + '</td>');
           tr.append('<td class="name">' + standing.username + '</td>');
           // tr.append('<td class="score">' + standing.golds + '</td>');
           // tr.append('<td class="score">' + standing.silvers + '</td>');
@@ -64,7 +64,14 @@ var Impromptu = (function Impromptu() {
             tr.addClass("favourite");
 
           tr.append('<td class="score">' + standing.position + '</td>');
-          tr.append('<td class="name">' + standing.username + '</td>');
+          $('<td class="username name">' + standing.username + '</td>')
+            .appendTo(tr)
+            .on('click', function(teamname, tr) {
+              return function() {
+                _this.toggleFavourite(teamname);
+                tr.toggleClass('favourite');
+              };
+            }(standing.team, tr));
           tr.append('<td class="name">' + standing.team + '</td>');
           tr.append('<td class="score">' + standing.golds + '</td>');
           tr.append('<td class="score">' + standing.silvers + '</td>');
@@ -229,6 +236,17 @@ var Impromptu = (function Impromptu() {
       if (index != -1)
         _this.setFavourites(favourites.splice(index, 1));
     };
+
+    _this.toggleFavourite = function(teamName) {
+      var favourites = _this.getFavourites();
+
+      var index = favourites.indexOf(teamName);
+
+      if (index != -1)
+        _this.removeFavourite(teamName);
+      else
+        _this.addFavourite(teamName);
+    }
 
     _this.getFavourites = function() {
       if (localStorage.favourites == null)

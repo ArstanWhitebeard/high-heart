@@ -1252,9 +1252,26 @@ body.nav-opened .nav {
   }
 }
 
-.favourite {
+.favourite, table tbody > tr.favourite:nth-child(odd) > td {
   background: $gold;
 }
+
+.username::before {
+  display: inline-block;
+  margin: -0.5rem 0.5rem -0.5rem -0.5rem;
+  content: " ";
+  width: 24px;
+  height: 24px;
+  background-color: $lightGrey;
+  -webkit-mask-image: url('../img/medal-solid.svg');
+
+  .favourite & {
+    background-color: $darkGrey;
+  }
+}
+
+.username:hover::before {background-color: $gold;}
+.favourite .username:hover::before {background-color: $lightGrey;}
 
 .post-title a {
     text-decoration: none;
