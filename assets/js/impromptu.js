@@ -87,7 +87,7 @@ var Impromptu = (function Impromptu() {
           tr.append('<td class="score">' + standing.golds + '</td>');
           tr.append('<td class="score">' + standing.silvers + '</td>');
           tr.append('<td class="score">' + standing.bronzes + '</td>');
-          tr.append('<td class="score">' + standing.handicap + '</td>');
+          tr.append('<td class="score">+' + standing.handicap + '</td>');
           tr.append('<td class="score">' + standing.points + '</td>');
 
           // TODO read nuumber from config file

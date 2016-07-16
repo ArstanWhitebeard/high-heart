@@ -732,6 +732,7 @@ body.nav-opened .site-wrapper {
     background-size: cover;
     overflow: hidden;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .home-template .main-header, .archive-template .main-header {
@@ -1234,6 +1235,7 @@ body.nav-opened .nav {
 
 .post.imp-tab-sum {
   cursor: pointer;
+  margin-top: -2rem;
 
   &::before {
     content:"Click to expand";
@@ -1256,6 +1258,11 @@ body.nav-opened .nav {
     font-size: 10rem;
     text-align: center;
     color: $silver;
+  }
+
+  .post-title {
+    text-align: center;
+    margin: 3rem 0 -3rem;
   }
 }
 
