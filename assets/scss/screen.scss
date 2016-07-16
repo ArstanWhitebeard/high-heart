@@ -1291,10 +1291,18 @@ body.nav-opened .nav {
   width: 2rem;
   height: 2rem;
   background-color: $lightGrey;
-  -webkit-mask-image: url('../img/medal-solid.svg');
+  -webkit-mask-image: url('../img/Black_Star.svg');
+  mask-image: url('../img/Black_Star.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transform: rotate(15deg);
 
   .favourite & {
     background-color: $darkGrey;
+  }
+
+  table tbody > tr:nth-child(odd) & {
+    transform: rotate(-15deg);
   }
 }
 
