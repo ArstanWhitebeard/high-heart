@@ -220,6 +220,7 @@ h1 {
     font-size: 5rem;
     letter-spacing: -2px;
     text-indent: -3px;
+    display: inline;
 }
 
 h2 {
@@ -576,6 +577,14 @@ iframe, .fluid-width-video-wrapper {
     margin: none;
     border: none;
     vertical-align: bottom;
+}
+
+.returnLink {
+  float: left;
+  font-size: 1rem;
+
+  &:hover {color: $gold;}
+  header & {float: right;}
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -1264,6 +1273,10 @@ body.nav-opened .nav {
     text-align: center;
     margin: 3rem 0 -3rem;
   }
+}
+
+.imp-tab-full {
+  margin-bottom: 2rem;
 }
 
 .favourite, table tbody > tr.favourite:nth-child(odd) > td {
