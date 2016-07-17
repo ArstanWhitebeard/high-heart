@@ -526,6 +526,18 @@ iframe, .fluid-width-video-wrapper {
     }
 }
 
+
+  .handicap {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    font-style: italic;
+  }
+
+.help_box emph {
+  font-style: italic;
+}
+
 .country_column_header {
     width: 100%;
     margin: 0 auto;
@@ -1247,7 +1259,7 @@ body.nav-opened .nav {
   margin-top: -2rem;
 
   &::before {
-    content:"Click to expand";
+    content:"Click table to expand";
     display: block;
     width: 100%;
     text-align: center;
@@ -2242,7 +2254,7 @@ article:nth-child(4) header .post-title {
   .flag {display: none;}
 
   .post.imp-tab-sum::before {
-    content: "Tap to expand";
+    content: "Tap table to expand";
   }
 
     .main-header {

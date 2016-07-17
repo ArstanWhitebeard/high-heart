@@ -123,7 +123,8 @@ var Impromptu = (function Impromptu() {
             '<div class="country_box">' +
             '<div class="country_name">' + country.name + '</div>' +
             '<img class="flag_small" src="../assets/' + country.flagPath + '"/>' +
-            '<span class="description">Handicap: +' + country.handicap + '</span>' +
+            '<span class="description">' + country.previous + 'pts in 2012</span>' +
+            '<span class="handicap">+' + country.handicap + '</span>' +
             '<input type="checkbox" class="countryCheckBox" id="check' + internalName + '" value="' + country.name + '" onclick="return impromptu.validateCheckBoxes(this)""/>' +
             '</div></label>').appendTo(column);
           }
