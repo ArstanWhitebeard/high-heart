@@ -3,6 +3,8 @@ var Impromptu = (function Impromptu() {
   return function Impromptu(args) {
     var _this = this;
 
+    var _literallyCanvas; // will init this on page load
+
     _this.tableSummary = function(callback) {
       var target = $('.imp-tab-sum');
 
@@ -269,6 +271,39 @@ var Impromptu = (function Impromptu() {
 
     _this.setFavourites = function(favourites) {
       localStorage.favourites = JSON.stringify(favourites);
+    };
+
+    _this.paint = function() {
+      var element = $('.imp-paint').get(0);
+      console.log(element);
+      _literallyCanvas = LC.init(element, {
+        imageURLPrefix : '../assets/js/literallycanvas-0.4.14/img'
+      });
+    };
+
+    _this.submitPainting = function() {
+      var author = $('#paintAuthor').val();
+      var title = $('#paintTitle').val();
+      var image = _literallyCanvas.getImage().toDataURL();
+
+      var obj = {
+        author : author,
+        title : title,
+        data : image
+      };
+
+      $.ajax({
+        method: 'POST',
+        url: impromptuConfig.urls.imageApi + '/upload',
+        data: JSON.stringify(obj),
+        dataType: 'json',
+        contentType: 'application/json; charset=UTF-8',
+        crossDomain: true
+      }).done(function(data) {
+        window.location.href = '/';
+      }).fail(function(data) {
+        $('.error').html(JSON.parse(data.responseText).message);
+      });
     };
   }
 

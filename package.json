@@ -2,10 +2,12 @@
   "name": "HighHeart",
   "version": "0.0.1",
   "dependencies": {
-    "isotope-layout": "^3.0.0"
+    "isotope-layout": "^3.0.0",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8"
   },
   "scripts": {
-    "postinstall": "cp node_modules/isotope-layout/dist/isotope.pkgd.min.js assets/js/isotope.pkgd.min.js; npm run build-css",
+    "postinstall": "cp node_modules/isotope-layout/dist/isotope.pkgd.min.js assets/js/isotope.pkgd.min.js; cp node_modules/react/dist/react-with-addons.min.js assets/js/react-with-addons.min.js; cp node_modules/react-dom/dist/react-dom.min.js assets/js/react-dom.min.js; npm run build-css",
     "build-css": "node ./node_modules/node-sass/bin/node-sass assets/scss -o assets/css",
     "watch-css": "node ./node_modules/node-sass/bin/node-sass -w assets/scss -o assets/css"
   },

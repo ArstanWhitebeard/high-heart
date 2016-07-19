@@ -55,6 +55,10 @@
     <script type="text/javascript" src="{{asset "js/config.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/impromptu.js"}}"></script>
 
+    <link href="{{asset "js/literallycanvas-0.4.14/css/literallycanvas.css"}}" rel="stylesheet">
+    <script src="{{asset "js/react-with-addons.min.js"}}"></script>
+    <script src="{{asset "js/react-dom.min.js"}}"></script>
+    <script src="{{asset "js/literallycanvas-0.4.14/js/literallycanvas.js"}}"></script>
 
     <script type="text/javascript">
     var impromptu = new Impromptu();
@@ -88,6 +92,12 @@
     if ($('body').hasClass('page-template-team')) {
       $(document).ready(function() {
         impromptu.team();
+      });
+    }
+
+    if ($('body').hasClass('page-template-paint')) {
+      $(document).ready(function() {
+        impromptu.paint();
       });
     }
 

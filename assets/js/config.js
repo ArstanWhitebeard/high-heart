@@ -5,6 +5,7 @@
      lastTeamCreation : 1470499200 // 4pm UTC, 6th Aug 2016 (afternoon following opening ceremony)
    },
    urls : {
-     api : "http://localhost:3000"
+     api : "http://localhost:3000",
+     imageApi : "http://localhost:3001"
    }
  }
