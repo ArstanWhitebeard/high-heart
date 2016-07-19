@@ -4,9 +4,17 @@
     <header class="post-header">
         <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
     </header>
+
+    {{#if image}}
+      <a class="read-more" href="{{url}}">
+        <section class="post-image" style="background-image: url('{{image}}')" alt="{{{title}}}"></section>
+      </a>
+    {{/if}}
+
     <section class="post-excerpt">
         <a class="read-more" href="{{url}}"><p>{{excerpt words="32"}} &raquo;</p></a>
     </section>
+
     <footer class="post-meta">
         {{tags prefix=" on "}}
         <time class="post-date" datetime="{{date format="YYYY-MM-DD hh:mm"}}">{{date format="hh:mm, DD MMMM YYYY"}}</time>
