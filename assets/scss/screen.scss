@@ -463,7 +463,7 @@ iframe, .fluid-width-video-wrapper {
     margin: 1.75em 0;
 }
 
-#countriesCheckBoxes {
+#countriesCheckBoxes, #paintForm {
   margin-top: 3rem;
 
   .nameLabel {
@@ -597,6 +597,16 @@ iframe, .fluid-width-video-wrapper {
 
   &:hover {color: $gold;}
   header & {float: right;}
+}
+
+.imp-paint {
+  border: 1px solid $silver;
+}
+
+.literally .lc-picker,
+.literally.toolbar-at-top .lc-options {
+  background-color: $lightGrey;
+  border-color: $silver;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -2373,7 +2383,7 @@ article:nth-child(4) header .post-title {
       &:nth-of-type(2n+1) {padding: 0 2% 0 0;}
     }
 
-    #countriesCheckBoxes .nameLabel {
+    .nameLabel {
       width: auto;
       margin: 0 0 5px;
 

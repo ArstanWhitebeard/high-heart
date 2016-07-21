@@ -277,18 +277,22 @@ var Impromptu = (function Impromptu() {
       var element = $('.imp-paint').get(0);
       console.log(element);
       _literallyCanvas = LC.init(element, {
-        imageURLPrefix : '../assets/js/literallycanvas-0.4.14/img'
+        imageURLPrefix : '../assets/js/literallycanvas-0.4.14/img',
+        backgroundColor : '#ffffff'
       });
     };
 
     _this.submitPainting = function() {
       var author = $('#paintAuthor').val();
       var title = $('#paintTitle').val();
+      var age = parseInt($('#paintAge').val());
+
       var image = _literallyCanvas.getImage().toDataURL();
 
       var obj = {
         author : author,
         title : title,
+        age: age,
         data : image
       };
 
