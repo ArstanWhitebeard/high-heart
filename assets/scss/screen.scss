@@ -623,6 +623,19 @@ iframe, .fluid-width-video-wrapper {
   text-align: center;
 }
 
+.featured p {
+  @extend .handwriting-font;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.featured h4 {
+  @extend .handwriting-font;
+  text-align: center;
+  font-weight: normal;
+  font-size: 3rem;  
+}
+
 /* When a video is inside the fitvids wrapper, drop the
 margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
@@ -1356,7 +1369,7 @@ body.nav-opened .nav {
 }
 
 article:nth-child(2) header .post-title {
-  &::first-letter {color: $gold !important;}
+  &::h4 {color: $gold !important;}
 }
 
 article:nth-child(3) header .post-title {
