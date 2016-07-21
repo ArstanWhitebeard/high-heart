@@ -27,18 +27,20 @@
             <h1 class="post-title">{{title}}</h1>
         </header>
 
-        <div class="help_box">Paint a picture for the homepage. It doesn't have to be any good, as long as you enjoy making it. You can't edit it later.</div>
+        <div class="help_box">Paint a picture about the Olympics. It doesn't have to be any good, as long as you enjoy making it.</div>
 
         <section class="post-content">
           <div class="imp-paint"></div>
+          <div class="paintDescription">"Ecce Homo", by Badly-Drawing Boy, aged 100</div>
             {{content}}
 
               <form id="paintForm" name="paintForm">
-                <label class="nameLabel">Title of your painting<input type="text" size="32" maxlength="32" id="paintTitle" name="paintTitle" value=""/></label>
-                <label class="nameLabel">Your name (public)<input type="text" size="32" maxlength="32" id="paintAuthor" name="paintAuthor" value=""/></label>
-                <label class="nameLabel">Your age<input type="number" min="0" max="100" id="paintAge" name="paintAge" value=""/></label>
+                <label class="nameLabel">Title of your painting<input type="text" size="32" maxlength="32" id="paintTitle" name="paintTitle" placeholder="Ecce Homo"/></label>
+                <label class="nameLabel">Your name (public)<input type="text" size="32" maxlength="32" id="paintAuthor" name="paintAuthor" placeholder="Badly-Drawing Boy"/></label>
+                <label class="nameLabel">Your age<input type="number" min="0" max="100" id="paintAge" name="paintAge" value="100"/></label>
                 <a href="/" class="returnLink">< Back to homepage</a>
                 <button type="button" onclick="return impromptu.submitPainting()">Submit</button>
+                <div class="submitNote">You can't edit the image after you submit</div>
                 <div class="error"</div>
               </form>
         </section>

@@ -275,10 +275,22 @@ var Impromptu = (function Impromptu() {
 
     _this.paint = function() {
       var element = $('.imp-paint').get(0);
-      console.log(element);
+
       _literallyCanvas = LC.init(element, {
         imageURLPrefix : '../assets/js/literallycanvas-0.4.14/img',
-        backgroundColor : '#ffffff'
+        backgroundColor : '#ffffff',
+        zoomMin : 0.4
+      });
+
+      $('#paintForm input').on('keyup mouseup', function() {
+        var author = $('#paintAuthor').val();
+        var title = $('#paintTitle').val();
+        var age = $('#paintAge').val();
+
+        if (author == "") author = "Badly-Drawing Boy";
+        if (title == "") title = "Ecce Homo";
+
+        $('.paintDescription').html('"' + title + '", by ' + author + ', aged ' + age);
       });
     };
 
@@ -287,13 +299,38 @@ var Impromptu = (function Impromptu() {
       var title = $('#paintTitle').val();
       var age = parseInt($('#paintAge').val());
 
-      var image = _literallyCanvas.getImage().toDataURL();
+      var image = _literallyCanvas.getImage();
+
+      var errors = [];
+
+      if (author == null || author == "") {
+          errors.push("Must specify your name");
+      }
+
+      if (title == null || title == "") {
+          errors.push("Must specify a title");
+      }
+
+      if (age == null || age != age) {
+          errors.push("Must specify your age");
+      }
+
+      if (image == null) {
+          errors.push("You haven't drawn anything yet!");
+      }
+
+      if (errors.length != 0) {
+        $('.error').html(errors.join('; '));
+        return;
+      }
+
+      var imageData = image.toDataURL();
 
       var obj = {
         author : author,
         title : title,
         age: age,
-        data : image
+        data : imageData
       };
 
       $.ajax({

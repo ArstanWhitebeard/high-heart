@@ -601,12 +601,26 @@ iframe, .fluid-width-video-wrapper {
 
 .imp-paint {
   border: 1px solid $silver;
+  margin-top: 1rem;
 }
 
 .literally .lc-picker,
 .literally.toolbar-at-top .lc-options {
   background-color: $lightGrey;
   border-color: $silver;
+}
+
+.submitNote {
+  clear: both;
+  float: right;
+  font-size: 1rem;
+}
+
+.paintDescription {
+  @extend .handwriting-font;
+  font-size: 3rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
