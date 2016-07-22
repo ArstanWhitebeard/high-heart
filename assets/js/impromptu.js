@@ -231,6 +231,10 @@ var Impromptu = (function Impromptu() {
         target.remove();
       }
 
+      $('.imp-paint-link').on('click', function() {
+        window.location.href = '/paint';
+      });
+
       if (callback)
         return callback();
     };

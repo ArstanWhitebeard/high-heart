@@ -623,17 +623,18 @@ iframe, .fluid-width-video-wrapper {
   text-align: center;
 }
 
-.featured p {
+.featured .post-excerpt p {
   @extend .handwriting-font;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-top: 0.5rem;
 }
 
 .featured h4 {
   @extend .handwriting-font;
   text-align: center;
   font-weight: normal;
-  font-size: 3rem;  
+  font-size: 3rem;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -1306,7 +1307,8 @@ body.nav-opened .nav {
   }
 }
 
-.imp-team-link {
+.imp-team-link,
+.imp-paint-link {
   background: $veryLightGrey;
   border: 1px solid $lightGrey;
   cursor: pointer;
@@ -1315,13 +1317,28 @@ body.nav-opened .nav {
   .post-excerpt p {
     font-size: 10rem;
     text-align: center;
-    color: $silver;
+    color: $gold;
+    height: 10rem;
+    line-height: 10rem;
   }
 
   .post-title {
     text-align: center;
-    margin: 3rem 0 -3rem;
+    margin: 2rem 0 0;
   }
+}
+
+.imp-paint-link .post-excerpt {
+  height: 10rem;
+  -webkit-mask-image: url('../img/brush.svg');
+  mask-image: url('../img/brush.svg');
+  background: $bronze;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
 }
 
 .imp-tab-full {
@@ -1368,15 +1385,15 @@ body.nav-opened .nav {
     // text-transform: uppercase;
 }
 
-article:nth-child(2) header .post-title {
-  &::h4 {color: $gold !important;}
-}
-
 article:nth-child(3) header .post-title {
-  &::first-letter {color: $silver !important;}
+  &::first-letter {color: $gold !important;}
 }
 
 article:nth-child(4) header .post-title {
+  &::first-letter {color: $silver !important;}
+}
+
+article:nth-child(5) header .post-title {
   &::first-letter {color: $bronze !important;}
 }
 
