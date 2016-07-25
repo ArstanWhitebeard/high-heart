@@ -794,12 +794,18 @@ body.nav-opened .site-wrapper {
     box-sizing: border-box;
 }
 
-.home-template .main-header, .archive-template .main-header {
+.home-template .main-header,
+.archive-template .main-header {
   padding: 1rem;
 }
 
-.post-template .main-header {
+.post-template .main-header,
+.author-template .main-header {
   padding: 2rem 0 0;
+}
+
+.main-header-content {
+  margin-top: 1rem;
 }
 
 .main-header .inner {
@@ -1166,12 +1172,13 @@ body.nav-opened .nav {
 
 .home-template .page-title, .archive-template .page-title {
   font-size: 9rem;
-  line-height: 6.5rem;
+  line-height: 5rem;
   word-spacing: 999rem;
   margin: 0;
 }
 
-.post-template .page-title {
+.post-template .page-title,
+.author-template .page-title {
   display: inline;
   font-size: 6rem;
   line-height: 2.5rem;
@@ -1190,8 +1197,9 @@ body.nav-opened .nav {
     }
 }
 
-.home-template .page-description, .archive-template .page-description {
-  margin: 0rem 0 0 21rem;
+.home-template .page-description,
+.archive-template .page-description {
+  margin: -0.8rem 0 0 21rem;
   font-size: 7rem;
   line-height: 5.25rem;
 
@@ -1200,16 +1208,6 @@ body.nav-opened .nav {
     margin-left: -3rem;
     font-size: 6rem;
     line-height: 4.1rem;
-  }
-}
-
-.post-template .page-description {
-  display: inline;
-  font-size: 6rem;
-  line-height: 2.5rem;
-
-  &:after {
-    margin-left: 0.5rem;
   }
 }
 
@@ -1269,7 +1267,8 @@ body.nav-opened .nav {
       margin:10px;
     }
 
-    .post-template & {
+    .post-template &,
+    .author-template & {
       width: calc(100% - 20px);
       margin: 1rem auto;
     }
@@ -1692,17 +1691,6 @@ article:nth-child(5) header .post-title {
 .tag-head.main-header {
     height: 40vh;
     min-height: 180px;
-}
-
-.author-head.main-header {
-    height: 40vh;
-    min-height: 180px;
-}
-
-.no-cover.author-head.main-header {
-    height: 10vh;
-    min-height: 100px;
-    background: transparent;
 }
 
 .author-profile {
@@ -2224,20 +2212,6 @@ article:nth-child(5) header .post-title {
         // height:45vh;
     }
 
-    .tag-head.main-header,
-    .author-head.main-header {
-        height: 30vh;
-    }
-
-    .no-cover.post-head.main-header {
-        // height: 55px;
-        padding: 0;
-    }
-
-    .no-cover.author-head.main-header {
-        padding: 0;
-    }
-
     .gh-subscribe {
         padding: 2rem;
     }
@@ -2270,35 +2244,53 @@ article:nth-child(5) header .post-title {
 
 }
 
+@media only screen and (min-width: 737px) {
+  .post-template .main-header-content,
+  .author-template .main-header-content {
+    margin: 0 0 0 0.5rem;
+  }
 
+  .post-template .page-description,
+  .author-template .page-description {
+    display: inline;
+    font-size: 6rem;
+    line-height: 2.5rem;
+
+    &:after {
+      margin-left: 0.5rem;
+    }
+  }
+}
 /* ==========================================================================
    12. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 737px) and (orientation: landscape),
             screen and (max-width: 500px) {
-  .post-template .main-header {
+  .post-template .main-header,
+  .author-template .main-header {
     padding: 1rem;
   }
 
   .home-template .page-title,
   .archive-template .page-title,
-  .post-template .page-title {
-      display: block;
+  .post-template .page-title,
+  .author-template .page-title {
       font-size: 5.5rem;
-      line-height: 4rem;
+      line-height: 2.5rem;
       letter-spacing: -0.1em;
       margin: 0;
   }
 
   .home-template .page-description,
   .archive-template .page-description,
-  .post-template .page-description  {
+  .post-template .page-description ,
+  .author-template .page-description {
       display: block;
       font-size: 4.5rem;
-      margin: 0rem;
       line-height: 3.25rem;
       letter-spacing: -0.1em;
+      margin: -0.8rem 0 0 0;
 
       &:after {
         display: block;
@@ -2489,7 +2481,7 @@ article:nth-child(5) header .post-title {
         margin-top: 0;
     }
 
-    .post-content img:not(.flag_small) {
+    article:not(.featured) .post-content img:not(.flag_small) {
         padding: 0;
         width: calc(100% + 32px); /* expand with to image + margins */
         min-width: 0;
@@ -2551,11 +2543,6 @@ article:nth-child(5) header .post-title {
 
     .post-head.main-header {
         // height: 30vh;
-    }
-
-    .tag-head.main-header,
-    .author-head.main-header {
-        height: 20vh;
     }
 
     .post-footer .author-image {
