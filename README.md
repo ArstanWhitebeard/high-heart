@@ -3,6 +3,8 @@ Experimental Ghost theme, based on [Casper](https://github.com/TryGhost/Casper),
 
 Uses [isotope](https://github.com/metafizzy/isotope) to display league table on the index page alongside bricks with post summaries.
 
+Uses [literally canvas](https://github.com/literallycanvas/literallycanvas) for an embedded MS-Paint-like drawing feature.
+
 'The Ghost of High Heart' is an obscure ASOIAF minor character.
 
 ## Installation
