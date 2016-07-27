@@ -626,7 +626,8 @@ iframe, .fluid-width-video-wrapper {
 .featured .post-excerpt p {
   @extend .handwriting-font;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
+  line-height: 3rem;
   margin-top: 0.5rem;
 }
 
@@ -821,6 +822,21 @@ body.nav-opened .site-wrapper {
 .main-nav a {
     text-decoration: none;
     @extend .header-font;
+}
+
+.site-description {
+  color: $white;
+  display: block;
+  position: absolute;
+  top:1rem;
+  right: 1rem;
+  @extend .handwriting-font;
+  font-size: 4rem;
+  transform: rotate(-10deg);
+
+  div {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Navigation */
@@ -1684,11 +1700,6 @@ article:nth-child(5) header .post-title {
    6. Author profile
    ========================================================================== */
 
-.post-head.main-header {
-    // height: 65vh;
-    // min-height: 180px;
-}
-
 .no-cover.post-head.main-header {
     // height: 85px;
     // min-height: 0;
@@ -2132,6 +2143,9 @@ article:nth-child(5) header .post-title {
 }
 
 @media only screen and (max-width: 900px) {
+  .site-description {
+    font-size: 3rem;
+  }
 
     blockquote {
         margin-left: 0;
@@ -2145,11 +2159,6 @@ article:nth-child(5) header .post-title {
 
     .scroll-down,
     .home-template .main-header:after { display: none; }
-
-    .archive-template .main-header {
-        min-height: 180px;
-        padding: 10% 0;
-    }
 
     .blog-logo img {
         padding: 4px 0;
@@ -2306,6 +2315,10 @@ article:nth-child(5) header .post-title {
         margin-left: 0rem;
         line-height: 2.75rem;
       }
+  }
+
+  .site-description {
+    div {margin-bottom: 0;}
   }
 }
 
@@ -2584,6 +2597,16 @@ article:nth-child(5) header .post-title {
 
     .read-next .post {
         width: 100%;
+    }
+
+    .site-description {
+      font-size: 2rem;
+      transform: rotate(30deg);
+      top: 3rem;
+
+      div {
+        margin-bottom: -1rem;
+      }
     }
 
 }
