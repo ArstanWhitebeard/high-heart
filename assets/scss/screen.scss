@@ -476,7 +476,7 @@ iframe, .fluid-width-video-wrapper {
 
   button {
     float: right;
-    background: $silver;
+    background: $bronze;
     &:hover {background: $gold;}
   }
 
@@ -506,7 +506,6 @@ iframe, .fluid-width-video-wrapper {
 
     cursor: pointer;
 
-
     .country_name {
       font-size:3rem;
       line-height: 4rem;
@@ -524,6 +523,11 @@ iframe, .fluid-width-video-wrapper {
       font-size: 1.5rem;
       line-height: 2.5rem;
     }
+}
+
+.country_column:not(.inactive) .country_box:not(.active):hover {
+  background: $gold;
+  color: $white;
 }
 
 
@@ -829,7 +833,7 @@ body.nav-opened .site-wrapper {
   display: block;
   position: absolute;
   top:1rem;
-  right: 1rem;
+  right: 2rem;
   @extend .handwriting-font;
   font-size: 4rem;
   transform: rotate(-10deg);
