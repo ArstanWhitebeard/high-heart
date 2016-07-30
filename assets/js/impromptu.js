@@ -283,7 +283,7 @@ var Impromptu = (function Impromptu() {
       _literallyCanvas = LC.init(element, {
         imageURLPrefix : '../assets/js/literallycanvas-0.4.14/img',
         backgroundColor : '#ffffff',
-        zoomMin : 0.4,
+        zoomMin : 0.5,
         tools : [
           LC.tools.Pencil,
           LC.tools.Eraser,

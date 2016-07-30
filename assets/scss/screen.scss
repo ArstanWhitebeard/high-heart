@@ -477,6 +477,7 @@ iframe, .fluid-width-video-wrapper {
   button {
     float: right;
     background: $bronze;
+    margin-top: 1rem;
     &:hover {background: $gold;}
   }
 
@@ -1454,7 +1455,7 @@ article:nth-child(5) header .post-title {
 .post-image {
   display: block;
   width: 100%;
-  height: 180px;
+  height: 250px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1585,19 +1586,7 @@ article:nth-child(5) header .post-title {
 /* Keep images centered, and allow images wider than the main
    text column to break out. */
 .post-content img:not(.flag_small) {
-    display: block;
-    max-width: 126%;
-    height: auto;
-    padding: 0.6em 0;
-    /* Centers an image by (1) pushing its left edge to the
-       center of its container and (2) shifting the entire image
-       in the opposite direction by half its own width.
-       Works for images that are larger than their containers. */
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%); /* for Safari and iOS */
-    -ms-transform: translateX(-50%); /* for IE9 */
-    transform: translateX(-50%);
+    width: 100%;
 }
 
 .footnotes {
