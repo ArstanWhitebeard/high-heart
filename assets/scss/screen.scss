@@ -1357,16 +1357,11 @@ body.nav-opened .nav {
 }
 
 .imp-paint-link .post-excerpt {
-  height: 10rem;
-  -webkit-mask-image: url('../img/brush.svg');
-  mask-image: url('../img/brush.svg');
-  background: $bronze;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+  height: 9rem;
+  background-image: url('../img/brown_brush.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .imp-tab-full {
@@ -1384,15 +1379,13 @@ body.nav-opened .nav {
   content: " ";
   width: 2rem;
   height: 2rem;
-  background-color: $lightGrey;
-  -webkit-mask-image: url('../img/Black_Star.svg');
-  mask-image: url('../img/Black_Star.svg');
-  -webkit-mask-size: contain;
-  mask-size: contain;
+  background-color: transparent;
+  background-image: url('../img/star-lg.png');
+  background-size: contain;
   transform: rotate(15deg);
 
   .favourite & {
-    background-color: $darkGrey;
+    background-image: url('../img/star-dg.png');
   }
 
   table tbody > tr:nth-child(odd) & {
@@ -1400,8 +1393,8 @@ body.nav-opened .nav {
   }
 }
 
-.pos:hover::after {background-color: $gold;}
-.favourite .pos:hover::after {background-color: $lightGrey;}
+.pos:hover::after {background-image: url('../img/star-g.png');}
+.favourite .pos:hover::after {background-image: url('../img/star-lg.png');}
 
 .username {
   cursor: pointer;
