@@ -397,14 +397,16 @@ table {
     width: 100%;
     max-width: 100%;
     background-color: transparent;
+    font-size: 1.6rem;
+    letter-spacing: -0.1rem;
 }
 
 table th,
 table td {
-    padding: 8px 4px;
+    padding: 6px 3px;
     line-height: 20px;
     text-align: left;
-    vertical-align: top;
+    vertical-align: middle;
     border-top: $silver 1px solid;
 }
 
@@ -444,7 +446,7 @@ th.pos {
 }
 td.score,
 th.score {
-    width: 25px;
+    width: 20px;
     text-align: center;
 }
 td.name,
@@ -2305,6 +2307,28 @@ article:nth-child(5) header .post-title {
 
   .site-description {
     div {margin-bottom: 0;}
+  }
+
+  table th, table td {
+    padding: 6px 2px;
+  }
+
+  td.flag, th.flag {
+    width: 20px;
+  }
+
+  .pos {
+    width: 30px;
+  }
+
+  .pos::after {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .page-template-table .post-content table img.flag_in {
+    width: 20px;
+    height: 14px;
   }
 }
 
