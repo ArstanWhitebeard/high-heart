@@ -397,7 +397,6 @@ table {
     width: 100%;
     max-width: 100%;
     background-color: transparent;
-    font-size: 1.6rem;
     letter-spacing: -0.1rem;
 }
 
@@ -1368,6 +1367,8 @@ body.nav-opened .nav {
 
 .imp-tab-full {
   margin-bottom: 2rem;
+
+  table {font-size: 1.6rem;}
 }
 
 .favourite, table tbody > tr.favourite:nth-child(odd) > td {
@@ -1395,8 +1396,8 @@ body.nav-opened .nav {
   }
 }
 
-.pos:hover::after {background-image: url('../img/star-g.png');}
-.favourite .pos:hover::after {background-image: url('../img/star-lg.png');}
+.no-touch .pos:hover::after {background-image: url('../img/star-g.png');}
+.no-touch .favourite .pos:hover::after {background-image: url('../img/star-lg.png');}
 
 .username {
   cursor: pointer;

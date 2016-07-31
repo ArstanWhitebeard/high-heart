@@ -79,6 +79,7 @@
       });
 
       $(document).ready(function() {
+        addTouchClass();
         impromptu.createTeamLink(function() {$('#content').isotope();});
         impromptu.tableSummary(function() {$('#content').isotope();});
       });
@@ -86,24 +87,40 @@
 
     if ($('body').hasClass('page-template-table')) {
       $(document).ready(function() {
+        addTouchClass();
         impromptu.table();
       });
     }
 
     if ($('body').hasClass('page-template-team')) {
       $(document).ready(function() {
+        addTouchClass();
         impromptu.team();
       });
     }
 
     if ($('body').hasClass('page-template-paint')) {
       $(document).ready(function() {
+        addTouchClass();
         impromptu.paint();
       });
     }
 
     $('header').on('click', function() { window.location.href = '/'; });
     $('.imp-tab-sum').on('click', function() { window.location.href = '/table'; });
+
+    function addTouchClass() {
+      if ( is_touch_device() ) {
+        $('html').addClass('touch')
+      } else {
+        $('html').addClass('no-touch')
+      }
+    }
+
+    function is_touch_device() {
+       return 'ontouchstart' in window        // works on most browsers
+        || navigator.maxTouchPoints;       // works on IE10/11 and Surface
+    };
 
     </script>
 </body>
