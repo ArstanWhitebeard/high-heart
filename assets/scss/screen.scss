@@ -2271,8 +2271,7 @@ article:nth-child(5) header .post-title {
    12. Media Queries - Smaller than 500px
    ========================================================================== */
 
-@media only screen and (max-width: 737px) and (orientation: landscape),
-            screen and (max-width: 500px) {
+@media only screen and (max-width: 737px) {
   .post-template .main-header,
   .author-template .main-header {
     padding: 1rem;
