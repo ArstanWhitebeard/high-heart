@@ -439,7 +439,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 
 td.pos,
 th.pos {
-    width: 35px;
+    width: 32px;
     text-align: left;
     position: relative;
 }
@@ -1322,6 +1322,7 @@ body.nav-opened .nav {
 .post.imp-tab-sum {
   cursor: pointer;
   margin-top: -2rem;
+  font-size: 1.6rem;
 
   &::before {
     content:"Click table to expand";
@@ -1385,9 +1386,9 @@ body.nav-opened .nav {
   display: inline-block;
   position: absolute;
   right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
   content: " ";
-  width: 2rem;
-  height: 2rem;
   background-color: transparent;
   background-image: url('../img/star-lg.png');
   background-size: contain;
@@ -2256,6 +2257,22 @@ article:nth-child(5) header .post-title {
 
 }
 
+@media only screen and (max-width: 737px) and (orientation: portrait) {
+  .imp-tab-full::before {
+    content: "(Landscape view shows more)";
+    background-image: url('../img/portrait.png');
+    background-size: 6rem;
+    background-position: left top;
+    background-repeat: no-repeat;
+    padding-left: 6rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    color: $midGrey;
+    font-size: 1.2rem;
+  }
+}
+
 @media only screen and (min-width: 737px) {
   .post-template .main-header-content,
   .author-template .main-header-content {
@@ -2318,7 +2335,8 @@ article:nth-child(5) header .post-title {
   }
 
   table th, table td {
-    padding: 6px 2px;
+    padding: 6px 0px 6px 1px;
+    font-size: 1.4rem;
   }
 
   td.flag, th.flag {
@@ -2338,6 +2356,8 @@ article:nth-child(5) header .post-title {
     width: 20px;
     height: 14px;
   }
+
+  td:nth-child(8) {padding-left: 3px;}
 }
 
 @media only screen and (max-width: 500px) {
