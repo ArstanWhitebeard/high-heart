@@ -37,7 +37,7 @@ var Impromptu = (function Impromptu() {
             };
           }(standing.team, tr));
 
-          tr.append('<td class="name">' + standing.username + '</td>');
+          tr.append('<td class="name">' + standing.username + '<emph>' + standing.team + '</emph></td>');
           // tr.append('<td class="score">' + standing.golds + '</td>');
           // tr.append('<td class="score">' + standing.silvers + '</td>');
           // tr.append('<td class="score">' + standing.bronzes + '</td>');
@@ -53,9 +53,9 @@ var Impromptu = (function Impromptu() {
       var target = $('.imp-tab-full');
       target.html();
       var table = $('<table>').appendTo(target);
-      table.append('<thead><tr><th class="score"></th><th>Player</th><th>Team</th>' +
-      '<th class="score">G</th><th class="score">S</th><th class="score">B</th>' +
-      '<th class="score">Hcp</th><th class="score">Pts</th>' +
+      table.append('<thead><tr><th class="score"></th><th>Player & <emph>Team</emph></th>' + //'<th>Team</th>' +
+      '<th class="score hcp">G</th><th class="score hcp">S</th><th class="score hcp">B</th>' +
+      '<th class="score hcp">Hcp</th><th class="score">Pts</th>' +
       '<th class="flag"></th><th class="flag"></th><th class="flag"></th><th class="flag"></th>' +
       '<th class="flag"></th><th class="flag"></th><th class="flag"></th><th class="flag"></th>' +
       '</tr></thead>');
@@ -84,12 +84,12 @@ var Impromptu = (function Impromptu() {
               };
             }(standing.team, tr));
 
-          tr.append('<td class="username name">' + standing.username + '</td>');
-          tr.append('<td class="name">' + standing.team + '</td>');
-          tr.append('<td class="score">' + standing.golds + '</td>');
-          tr.append('<td class="score">' + standing.silvers + '</td>');
-          tr.append('<td class="score">' + standing.bronzes + '</td>');
-          tr.append('<td class="score">+' + standing.handicap + '</td>');
+          tr.append('<td class="username name">' + standing.username + '<emph>' + standing.team + '</emph></td>');
+          // tr.append('<td class="name">' + standing.team + '</td>');
+          tr.append('<td class="score hcp">' + standing.golds + '</td>');
+          tr.append('<td class="score hcp">' + standing.silvers + '</td>');
+          tr.append('<td class="score hcp">' + standing.bronzes + '</td>');
+          tr.append('<td class="score hcp">+' + standing.handicap + '</td>');
           tr.append('<td class="score">' + standing.points + '</td>');
 
           // TODO read nuumber from config file

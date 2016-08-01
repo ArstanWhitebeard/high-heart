@@ -402,7 +402,7 @@ table {
 
 table th,
 table td {
-    padding: 6px 3px;
+    padding: 6px 2px;
     line-height: 20px;
     text-align: left;
     vertical-align: middle;
@@ -454,6 +454,12 @@ th.name {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    emph {
+      font-style: italic;
+      margin-left: 1rem;
+      color: $midGrey;
+    }
 }
 td.flag,
 th.flag {
@@ -2272,6 +2278,8 @@ article:nth-child(5) header .post-title {
    ========================================================================== */
 
 @media only screen and (max-width: 737px) {
+  .imp-tab-sum td.name emph {display: none;}
+
   .post-template .main-header,
   .author-template .main-header {
     padding: 1rem;
@@ -2317,7 +2325,7 @@ article:nth-child(5) header .post-title {
     width: 20px;
   }
 
-  .pos {
+  td.pos, th.pos {
     width: 30px;
   }
 
@@ -2337,7 +2345,7 @@ article:nth-child(5) header .post-title {
     width: calc(50% - 20px);
   }
 
-  .flag {display: none;}
+  .flag, .hcp {display: none;}
 
   .post.imp-tab-sum::before {
     content: "Tap table to expand";
